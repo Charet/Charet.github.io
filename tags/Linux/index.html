@@ -141,7 +141,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    9 分钟 读完 (大约 1307 个字)
+                    9 分钟 读完 (大约 1299 个字)
                 </span>
                 
                 
@@ -154,7 +154,7 @@
             
         </h1>
         <div class="content">
-            <h1 id="Manjaro安装一条龙教程"><a href="#Manjaro安装一条龙教程" class="headerlink" title="Manjaro安装一条龙教程"></a>Manjaro安装一条龙教程</h1><p>我电脑比较神奇，系统经常boom。重装之后我又不记得自己原来电脑上有啥，于是就有了这篇备忘录。</p>
+            <p>我电脑比较神奇，系统经常boom。重装之后我又不记得自己原来电脑上有啥，于是就有了这篇备忘录。</p>
 <p>我的manjaro是gnome桌面的，我感觉开箱即用非常快乐就用这个桌面了。（但这几天我看见别人的KDE桌面好强，加个插件各种高级操作，i了i了）</p>
 <h2 id="分区挂载"><a href="#分区挂载" class="headerlink" title="分区挂载"></a>分区挂载</h2><p>分区的话我在网上收集了一点资料，大概就这样分：</p>
 <table>
@@ -186,7 +186,7 @@
 <td>用户存储数据用</td>
 </tr>
 </tbody></table>
-<p>（转载于此：<a href="https://michael728.github.io/2019/08/03/linux-manjaro-install/">点我</a>）</p>
+<p>（转载于此：<a href="https://michael728.github.io/2019/08/03/linux-manjaro-install/" target="_blank" rel="noopener">点我</a>）</p>
 <h2 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h2><p>然后就是换源非常，喜闻乐见的的几行代码，傻瓜式操作。</p>
 <p>我感觉manjaro的比其他系统人性化很多！因为他有窗口！！</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman-mirrors -g</span><br><span class="line">sudo pacman-mirrors -c China -m rank</span><br><span class="line"><span class="meta">#</span><span class="bash"> 然后等一下就会弹出窗口，按速度自己选吧～</span></span><br><span class="line"></span><br><span class="line">nano /etc/pacman.conf</span><br><span class="line"><span class="meta">#</span><span class="bash"> 在文件内添加这三行</span></span><br><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel = Optional TrustedOnly</span><br><span class="line">Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">再安装一下archlinuxcn-keyring</span></span><br><span class="line">sudo pacman -S archlinuxcn-keyring</span><br></pre></td></tr></table></figure>
@@ -231,7 +231,7 @@
 <p>设置开机自启</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable clash@user</span><br></pre></td></tr></table></figure>
 
-<p>(转载于此：<a href="https://github.com/Sitoi/SystemdClash">点我</a>)</p>
+<p>(转载于此：<a href="https://github.com/Sitoi/SystemdClash" target="_blank" rel="noopener">点我</a>)</p>
 <h2 id="WPS"><a href="#WPS" class="headerlink" title="WPS"></a>WPS</h2><h4 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yay -S wps-office wps-office-mui-zh-cn</span><br></pre></td></tr></table></figure>
 
 <p>这里会安装office三兄弟和中文包</p>
@@ -262,6 +262,7 @@
         
     </div>
 </div>
+
 
 
 
@@ -301,7 +302,7 @@
                     
                     <p class="is-size-6 is-flex is-flex-center has-text-grey">
                         <i class="fas fa-map-marker-alt has-mr-7"></i>
-                        <span>China</span>
+                        <span>China,Earth</span>
                     </p>
                     
                 </div>
@@ -347,11 +348,22 @@
         </nav>
         
         <div class="level">
-            <a class="level-item button is-link is-rounded" href="https://github.com/Charet" target="_blank" rel="noopener">
+            <a class="level-item button is-link is-rounded" href="https://space.bilibili.com/30531025" target="_blank" rel="noopener">
                 关注我</a>
         </div>
         
         
+        
+        <div class="level is-mobile">
+            
+            <a class="level-item button is-white is-marginless" target="_blank" rel="noopener"
+                title="Github" href="https://github.com/Charet">
+                
+                <i class="fab fa-github"></i>
+                
+            </a>
+            
+        </div>
         
     </div>
 </div>
@@ -417,12 +429,6 @@
         
         <article class="media">
             
-            <a href="/2020/02/23/Manjaro%E9%85%8D%E7%BD%AE/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Manjaro配置">
-                </p>
-            </a>
-            
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-23T09:39:30.000Z">2020-02-23</time></div>
@@ -435,12 +441,6 @@
         </article>
         
         <article class="media">
-            
-            <a href="/2020/02/23/%E6%88%91%E8%A6%81%E6%89%93110%E4%BA%86/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="我要打110了!">
-                </p>
-            </a>
             
             <div class="media-content">
                 <div class="content">
@@ -526,12 +526,6 @@
         
         <article class="media">
             
-            <a href="/2020/02/23/Manjaro%E9%85%8D%E7%BD%AE/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="Manjaro配置">
-                </p>
-            </a>
-            
             <div class="media-content">
                 <div class="content">
                     <div><time class="has-text-grey is-size-7 is-uppercase" datetime="2020-02-23T09:39:30.000Z">2020-02-23</time></div>
@@ -544,12 +538,6 @@
         </article>
         
         <article class="media">
-            
-            <a href="/2020/02/23/%E6%88%91%E8%A6%81%E6%89%93110%E4%BA%86/" class="media-left">
-                <p class="image is-64x64">
-                    <img class="thumbnail" src="/images/thumbnail.svg" alt="我要打110了!">
-                </p>
-            </a>
             
             <div class="media-content">
                 <div class="content">
