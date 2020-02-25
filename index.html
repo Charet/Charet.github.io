@@ -177,7 +177,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    9 分钟 读完 (大约 1299 个字)
+                    9 分钟 读完 (大约 1300 个字)
                 </span>
                 
                 
@@ -192,108 +192,16 @@
         <div class="content">
             <p>我电脑比较神奇，系统经常boom。重装之后我又不记得自己原来电脑上有啥，于是就有了这篇备忘录。</p>
 <p>我的manjaro是gnome桌面的，我感觉开箱即用非常快乐就用这个桌面了。（但这几天我看见别人的KDE桌面好强，加个插件各种高级操作，i了i了）</p>
-<h2 id="分区挂载"><a href="#分区挂载" class="headerlink" title="分区挂载"></a>分区挂载</h2><p>分区的话我在网上收集了一点资料，大概就这样分：</p>
-<table>
-<thead>
-<tr>
-<th>大小</th>
-<th>挂载点</th>
-<th>用途</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>40G</td>
-<td><code>/</code></td>
-<td>用于存放系统相当于windows的C盘</td>
-</tr>
-<tr>
-<td>8G</td>
-<td><code>/swap</code></td>
-<td>一般设为电脑内存的2倍</td>
-</tr>
-<tr>
-<td>600MB</td>
-<td><code>/boot</code></td>
-<td>引导分区</td>
-</tr>
-<tr>
-<td>剩余所有空间</td>
-<td><code>/home</code></td>
-<td>用户存储数据用</td>
-</tr>
-</tbody></table>
-<p>（转载于此：<a href="https://michael728.github.io/2019/08/03/linux-manjaro-install/" target="_blank" rel="noopener">点我</a>）</p>
-<h2 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h2><p>然后就是换源非常，喜闻乐见的的几行代码，傻瓜式操作。</p>
-<p>我感觉manjaro的比其他系统人性化很多！因为他有窗口！！</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman-mirrors -g</span><br><span class="line">sudo pacman-mirrors -c China -m rank</span><br><span class="line"><span class="meta">#</span><span class="bash"> 然后等一下就会弹出窗口，按速度自己选吧～</span></span><br><span class="line"></span><br><span class="line">nano /etc/pacman.conf</span><br><span class="line"><span class="meta">#</span><span class="bash"> 在文件内添加这三行</span></span><br><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel = Optional TrustedOnly</span><br><span class="line">Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">再安装一下archlinuxcn-keyring</span></span><br><span class="line">sudo pacman -S archlinuxcn-keyring</span><br></pre></td></tr></table></figure>
-
-<p>之后同步同步u1s1看心情，等有时间更新一样的:</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syyu</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="中文输入法"><a href="#中文输入法" class="headerlink" title="中文输入法"></a>中文输入法</h2><p>我用的是google拼音输入法。搜狗在manjaro上有bug，我懒得去搞，然而这个用来这么久除了没词库，其他我感觉还行。（词库貌似可以手动加，但是我懒）</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S fcitx-googlepinyin fcitx-im fcitx-configtool</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装好了添加一下配置文件，注销系统就可以用了。</span></span><br><span class="line">nano ~/.xprofile</span><br><span class="line"><span class="meta">#</span><span class="bash"> 添加以下内容</span></span><br><span class="line">export GTK_MODULE=fcitx</span><br><span class="line">export QT_IM_MODULE=fcitx</span><br><span class="line">export XMODIFIERS="@im=fcitx"</span><br></pre></td></tr></table></figure>
-
-<h2 id="Fishell"><a href="#Fishell" class="headerlink" title="Fishell"></a>Fishell</h2><p>fish这个shell我挺喜欢的没有zsh那么重量，然后对我来说该有的功能都有。入了这玩意以后我就换不掉了。</p>
-<p>安装非常简单就：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S fish</span><br></pre></td></tr></table></figure>
-
-<p>fish要配合omf一起用比较好，安装也是一条命令的事，懒人福利，快乐！</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish</span><br></pre></td></tr></table></figure>
-
-<p>我用的是默认的那个皮肤，挺好的。其他的插件可以自行了解一下。</p>
-<h2 id="Clash（你猜这是啥）"><a href="#Clash（你猜这是啥）" class="headerlink" title="Clash（你猜这是啥）"></a>Clash（你猜这是啥）</h2><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>安装还是一行命令的事：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yay -S clash</span><br></pre></td></tr></table></figure>
-
-<p>（没有yay就自己改成pacman，下面也是一样的）</p>
-<p>然后clash命令执行一下让他建立配置文件，</p>
-<p>配置文件在<code>~/.config/clash/</code></p>
-<p>之后把自己的配置文件复制进来就行。</p>
-<hr>
-<h4 id="开机自启"><a href="#开机自启" class="headerlink" title="开机自启"></a>开机自启</h4><p>下面是将clash设置为<strong>开机自启</strong>，我们使用的是systemd。</p>
-<p>在<code>/lib/systemd/system/</code>目录下创建<code>clash@.service</code>文件</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /lib/systemd/system/clash@.service</span><br></pre></td></tr></table></figure>
-
-<p>写入一下内容（不用修改）并保存：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=A rule based proxy in Go for %i.</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">User=%i</span><br><span class="line">Restart=on-abort</span><br><span class="line">ExecStart=/usr/bin/clash</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure>
-
-<p>重新加载 <code>systemd</code> 模块</p>
-<blockquote>
-<p><code>user</code> 表示的是当前用户名</p>
-</blockquote>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start clash@user</span><br></pre></td></tr></table></figure>
-
-<p>设置开机自启</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable clash@user</span><br></pre></td></tr></table></figure>
-
-<p>(转载于此：<a href="https://github.com/Sitoi/SystemdClash" target="_blank" rel="noopener">点我</a>)</p>
-<h2 id="WPS"><a href="#WPS" class="headerlink" title="WPS"></a>WPS</h2><h4 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yay -S wps-office wps-office-mui-zh-cn</span><br></pre></td></tr></table></figure>
-
-<p>这里会安装office三兄弟和中文包</p>
-<h4 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h4><p>你一打开就给你弹一个报错窗口非常快乐，说缺少字体。But我们不用慌，像其他发行版我们还要自己找字体还要自己装，我们的manjaro就不一样了强大的AUR啥玩意都有，咱又就一个命令解决：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yay -S ttf-wps-fonts</span><br></pre></td></tr></table></figure>
-
-<p>装好以后，去写文档，喜闻乐见的问题又出现了，wtf我怎么用不了的中文输入法，还是别慌～</p>
-<p>我们把这三个文件<code>/usr/bin/wps</code>、<code>/usr/bin/wpp</code>、<code>/usr/bin/et</code>的开头加上这几句话问题就迎刃而解。</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">export XMODIFIERS="@im=fcitx"</span><br><span class="line">export QT_IM_MODULE="fcitx"</span><br></pre></td></tr></table></figure>
-
-<h2 id="Pip换源"><a href="#Pip换源" class="headerlink" title="Pip换源"></a>Pip换源</h2><p>在~/.pip/pip.conf中加入一下一句话，没有这个文件就自己创一个：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line">index-url = https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure>
-
-<h2 id="npm换源"><a href="#npm换源" class="headerlink" title="npm换源"></a>npm换源</h2><p>一行命令非常快乐</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https://registry.npm.taobao.org #淘宝的源</span><br><span class="line">npm config set registry https://registry.npmjs.org/ #官方的源</span><br><span class="line"><span class="meta">#</span><span class="bash">不想还源可以装一个cnpm，要用npm就把npm改为cnpm</span></span><br><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure>
-
-
-
-<h2 id="我用的一些软件"><a href="#我用的一些软件" class="headerlink" title="我用的一些软件"></a>我用的一些软件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo yay -S albert #一个快速开软件的小工具</span><br><span class="line">sudo yay -S chrome #浏览器界的大哥大</span><br><span class="line">sudo yay -S netease-cloud-music #网易云</span><br><span class="line">sudo yay -S guake #一个用fps引擎写出来的一键呼出的终端</span><br><span class="line">sudo yay -S visual-studio-code-bin #vscode个人感觉无敌好用</span><br><span class="line">sudo yay -S nvim #一个轻量版的vim</span><br><span class="line">sudo yay -S typora #mkdown的编辑器</span><br><span class="line">sudo yay -S ranger #终端里的资源管理器</span><br></pre></td></tr></table></figure>
-
-
-
-<p>OK,目前我就用了这些东西，还有一些小东西就懒得写了23333,后续还有啥我就后来加吧。</p>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2020/02/23/Manjaro%E9%85%8D%E7%BD%AE/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
