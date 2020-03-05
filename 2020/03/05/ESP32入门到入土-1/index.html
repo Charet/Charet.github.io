@@ -7,16 +7,21 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>归档: 2020/2 - Char&#39;s Blog</title>
+<title>ESP32入门到入土 1 - Char&#39;s Blog</title>
 
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Char&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2020/02/index.html">
+    <meta name="description" content="开一个坑来记录一下我玩esp32的路。 我电脑的环境如下  系统：Manjrao19 Python版本：3.8.1 Shell：fish  这一篇来说一下刷固件什么的以及我踩的坑。 我基于MicroPython开发的，ArdoinoC要去学C短期玩玩开发板去重新学一门语言好累，加上C那玩意搞得我头皮发麻就没这个想法了，后来发现Python也可以写，那不何乐而不为？">
+<meta property="og:type" content="article">
+<meta property="og:title" content="ESP32入门到入土 1">
+<meta property="og:url" content="http://yoursite.com/2020/03/05/ESP32%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9C%9F-1/index.html">
 <meta property="og:site_name" content="Char&#39;s Blog">
+<meta property="og:description" content="开一个坑来记录一下我玩esp32的路。 我电脑的环境如下  系统：Manjrao19 Python版本：3.8.1 Shell：fish  这一篇来说一下刷固件什么的以及我踩的坑。 我基于MicroPython开发的，ArdoinoC要去学C短期玩玩开发板去重新学一门语言好累，加上C那玩意搞得我头皮发麻就没这个想法了，后来发现Python也可以写，那不何乐而不为？">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="article:published_time" content="2020-03-05T03:12:31.000Z">
+<meta property="article:modified_time" content="2020-03-05T03:15:11.586Z">
 <meta property="article:author" content="Char">
+<meta property="article:tag" content="ESP32">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
@@ -76,7 +81,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/Logo.jpg" alt="Char&#39;s Blog" height="28">
+                <img src="/images/Logo.jpg" alt="ESP32入门到入土 1" height="28">
             
             </a>
         </div>
@@ -104,6 +109,10 @@
             <div class="navbar-end">
                 
                 
+                <a class="navbar-item is-hidden-tablet catalogue" title="目录" href="javascript:;">
+                    <i class="fas fa-list-ul"></i>
+                </a>
+                
                 
                 <a class="navbar-item search" title="搜索" href="javascript:;">
                     <i class="fas fa-search"></i>
@@ -118,113 +127,159 @@
         <div class="container">
             <div class="columns">
                 <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
+<div class="card">
+    
+    <div class="card-content article ">
+        
+        <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
+            <div class="level-left">
+                <time class="level-item has-text-grey" datetime="2020-03-05T03:12:31.000Z">2020-03-05</time>
+                
+                <div class="level-item">
+                <a class="has-link-grey -link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+                </div>
+                
+                
+                <span class="level-item has-text-grey">
+                    
+                    
+                    7 分钟 读完 (大约 1020 个字)
+                </span>
+                
+                
+            </div>
+        </div>
+        
+        <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
+            
+                ESP32入门到入土 1
+            
+        </h1>
+        <div class="content">
+            <p>开一个坑来记录一下我玩esp32的路。</p>
+<p>我电脑的环境如下</p>
+<blockquote>
+<p>系统：Manjrao19</p>
+<p>Python版本：3.8.1</p>
+<p>Shell：fish</p>
+</blockquote>
+<p>这一篇来说一下刷固件什么的以及我踩的坑。</p>
+<p>我基于MicroPython开发的，ArdoinoC要去学C短期玩玩开发板去重新学一门语言好累，加上C那玩意搞得我头皮发麻就没这个想法了，后来发现Python也可以写，那不何乐而不为？</p>
+<a id="more"></a>
 
-<div class="card widget">
+<h3 id="烧录工具-esptool-安装"><a href="#烧录工具-esptool-安装" class="headerlink" title="烧录工具(esptool)安装"></a>烧录工具(esptool)安装</h3><p>我们刷MicoPython的工具叫<code>esptool</code>。为了方便管理吧，我就为esp32单独开了一个venv。<del>其实是esptool和我的一个包冲突</del>。话不多说我么先来配置一下virtualenv的环境。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> virtualenv esp32</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> chmod 755 esp32/bin/activate</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ./acrivate</span></span><br><span class="line"><span class="meta">(esp32)$</span><span class="bash"> pip install esptool</span></span><br></pre></td></tr></table></figure>
+
+<p>我来稍微解释一下以上命令的意思</p>
+<ul>
+<li><p>第一行是说在当前目录下建立一个esp32的虚拟环境。</p>
+</li>
+<li><p>第二行是把启动虚拟环境的文件给予可执行权限。</p>
+</li>
+<li><p>第三行是启动虚拟环境,若启动成功了终端会加一个<code>(环境名)</code>的前缀,就像第四行前一样。</p>
+</li>
+<li><p>第四行是在虚拟环境中安装esptool。</p>
+</li>
+</ul>
+<h3 id="擦除Flash"><a href="#擦除Flash" class="headerlink" title="擦除Flash"></a>擦除Flash</h3><p>如果你的ESP32刚到手上应该先去吧他的Flash擦除一下，这样才能刷如MicroPython。擦除过程非常简单，但是我搞了半天踩了坑，淦。</p>
+<p>首先我们先去看看我们esp32用了那个串口</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ls /dev/ttyUSB*</span></span><br><span class="line">crw-rw---- 1 root uucp 188, 0  3月  5 10:07 /dev/ttyUSB0</span><br></pre></td></tr></table></figure>
+
+<p>输出就只有一个所以很明显我的板子用的是ttyUSB0这个串口。</p>
+<p>有了串口我们就可以真正的去擦Flash了</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">(esp32)$</span><span class="bash"> sudo esptool.py --port /dev/ttyUSB0 erase_flash</span></span><br><span class="line">esptool.py v2.8</span><br><span class="line">Serial port /dev/ttyUSB0</span><br><span class="line">Connecting.....</span><br><span class="line">Detecting chip type... ESP32</span><br><span class="line">Chip is ESP32D0WDQ6 (revision 1)</span><br><span class="line">Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None</span><br><span class="line">WARNING: Detected crystal freq 41.01MHz is quite different to normalized freq 40MHz. Unsupported crystal in use?</span><br><span class="line">Crystal is 40MHz</span><br><span class="line">MAC: 24:6f:28:b6:14:04</span><br><span class="line">Uploading stub...</span><br><span class="line">Running stub...</span><br><span class="line">Stub running...</span><br><span class="line">Erasing flash (this may take a while)...</span><br><span class="line">Chip erase completed successfully in 9.2s</span><br><span class="line">Hard resetting via RTS pin...</span><br></pre></td></tr></table></figure>
+
+<p>记得命令跑起来的时候按一下板子上的boot键，我当时就没按导致一直报错。如果你的输出和我差不多那估计就擦好了。</p>
+<h3 id="固件刷入"><a href="#固件刷入" class="headerlink" title="固件刷入"></a>固件刷入</h3><p>固件我们首先去<a href="http://micropython.org/download#esp32">MicroPyhton官网</a>去下,我不记得在那看到有个大佬说固件貌似v1.10及以上的版本刷不进去。不知道是不是真的，我为了尽量不浪费时间就下了<a href="http://micropython.org/resources/firmware/esp32-idf3-20180511-v1.9.4.bin">v1.9.4</a>。要是各位愿意可以去试试，要是可以记得评论和我说一下，谢谢了。</p>
+<p>下载好我们去看看固件的存放路径,我的是<code>~/Download/esp32-idf3-20180511-v1.9.4.bin</code>。</p>
+<p>记住以后就可以开始刷了,记住把我的串口号和固件路径换成你的，烧录的时候也要按一下boot键。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">(esp32)$</span><span class="bash"> esptool.py --port /dev/ttyUSB0 --baud 460800 write_flash --flash_size=detect 0 ～/Download/esp32-idf3-20180511-v1.9.4.bin</span></span><br><span class="line">esptool.py v2.8</span><br><span class="line">Serial port /dev/ttyUSB0</span><br><span class="line">Connecting........_____...</span><br><span class="line">Detecting chip type... ESP32</span><br><span class="line">Chip is ESP32D0WDQ6 (revision 1)</span><br><span class="line">Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None</span><br><span class="line">Crystal is 40MHz</span><br><span class="line">MAC: 24:6f:28:b6:14:04</span><br><span class="line">Uploading stub...</span><br><span class="line">Running stub...</span><br><span class="line">Stub running...</span><br><span class="line">Changing baud rate to 460800</span><br><span class="line">Changed.</span><br><span class="line">Configuring flash size...</span><br><span class="line">Auto-detected Flash size: 4MB</span><br><span class="line">Compressed 982832 bytes to 609724...</span><br><span class="line">Wrote 982832 bytes (609724 compressed) at 0x00000000 in 13.9 seconds (effective 565.0 kbit/s)...</span><br><span class="line">Hash of data verified.</span><br><span class="line"></span><br><span class="line">Leaving...</span><br><span class="line">Hard resetting via RTS pin...</span><br></pre></td></tr></table></figure>
+
+<p>要是输出和我一样证明你固件就刷进去了。</p>
+<h3 id="问题记录"><a href="#问题记录" class="headerlink" title="问题记录"></a>问题记录</h3><ol>
+<li>在刷入和清楚的时候记得在命令执行后按boot键（boot键是esp32的下载键）</li>
+<li>按boot键的时机。经过我踩坑时的那么多次尝试，如果你执行命令之后不去按boot键会跑进度条，在进度条时按也是没事的，要是进度条跑慢就会报这样的错。（进度条就是Connecting那行）</li>
+</ol>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">esptool.py v2.8</span><br><span class="line">Serial port /dev/ttyUSB0</span><br><span class="line">Connecting........_____....._____....._____....._____....._____....._____....._____</span><br><span class="line"></span><br><span class="line">A fatal error occurred: Failed to connect to Espressif device: Invalid head of packet (0x55)</span><br></pre></td></tr></table></figure>
+
+<p>我感觉第二条是屁话hhh。</p>
+
+        </div>
+        
+        <div class="level is-size-7 is-uppercase">
+            <div class="level-start">
+                <div class="level-item">
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/ESP32/" rel="tag">ESP32</a>
+                </div>
+            </div>
+        </div>
+        
+        
+        
+    </div>
+</div>
+
+
+
+<div class="card">
     <div class="card-content">
-        <h3 class="tag is-link">
-        二月 2020
-        </h3>
-        <div class="timeline">
-        
-            <article class="media">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2020-02-29T12:53:20.000Z">2020-02-29</time>
-                        <a href="/2020/02/29/ESP32/" class="title has-link-black-ter is-size-6 has-text-weight-normal">ESP32</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="/images/wechat.jpg" alt="微信"></div>
+</a>
+
                 
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2020-02-27T14:26:10.000Z">2020-02-27</time>
-                        <a href="/2020/02/27/%E5%BF%83%E6%80%81%E7%82%B8%E8%A3%82/" class="title has-link-black-ter is-size-6 has-text-weight-normal">心态炸裂</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/%E8%83%A1%E6%89%AF/">胡扯</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2020-02-25T11:02:52.000Z">2020-02-25</time>
-                        <a href="/2020/02/25/%E7%BA%A2%E8%9C%BB%E8%9C%93/" class="title has-link-black-ter is-size-6 has-text-weight-normal">红蜻蜓</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/">日常记录</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2020-02-23T09:39:30.000Z">2020-02-23</time>
-                        <a href="/2020/02/23/Manjaro%E9%85%8D%E7%BD%AE/" class="title has-link-black-ter is-size-6 has-text-weight-normal">Manjaro配置</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
-            <article class="media">
-                
-                <div class="media-content">
-                    <div class="content">
-                        <time class="has-text-grey is-size-7 is-block is-uppercase" datetime="2020-02-22T17:18:31.000Z">2020-02-23</time>
-                        <a href="/2020/02/23/%E6%88%91%E8%A6%81%E6%89%93110%E4%BA%86/" class="title has-link-black-ter is-size-6 has-text-weight-normal">我要打110了!</a>
-                        <div class="level article-meta is-mobile">
-                            <div class="level-left">
-                                
-                                <div class="level-item is-size-7 is-uppercase">
-                                <a class="has-link-grey -link" href="/categories/%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/">日常记录</a>
-                                </div>
-                                
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </article>
-        
         </div>
     </div>
 </div>
 
+
+
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/03/05/fish%E8%BF%90%E8%A1%8Cvenv%E7%9A%84%E5%9D%91/">
+                <span class="level-item">fish运行venv的坑</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
+
+
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: false,
+        verify: false,
+        app_id: 'hbwxoXCzCRqaI7J9ydj4zKws-gzGzoHsz',
+        app_key: 'EI7PsFEeK8ivWQEtJhdLAzX8',
+        placeholder: 'Say something...'
+    });
+</script>
+
+
+    </div>
+</div>
 
 </div>
                 
@@ -349,6 +404,34 @@
 
     
         
+
+    <div class="card widget" id="toc">
+        <div class="card-content">
+            <div class="menu">
+                <h3 class="menu-label">
+                    目录
+                </h3>
+                <ul class="menu-list"><li>
+        <a class="is-flex" href="#烧录工具-esptool-安装">
+        <span class="has-mr-6">1</span>
+        <span>烧录工具(esptool)安装</span>
+        </a></li><li>
+        <a class="is-flex" href="#擦除Flash">
+        <span class="has-mr-6">2</span>
+        <span>擦除Flash</span>
+        </a></li><li>
+        <a class="is-flex" href="#固件刷入">
+        <span class="has-mr-6">3</span>
+        <span>固件刷入</span>
+        </a></li><li>
+        <a class="is-flex" href="#问题记录">
+        <span class="has-mr-6">4</span>
+        <span>问题记录</span>
+        </a></li></ul>
+            </div>
+        </div>
+    </div>
+
     
         <div class="card widget">
     <div class="card-content">
@@ -835,7 +918,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/Logo.jpg" alt="Char&#39;s Blog" height="28">
+                    <img src="/images/Logo.jpg" alt="ESP32入门到入土 1" height="28">
                 
                 </a>
                 <p class="is-size-7">
