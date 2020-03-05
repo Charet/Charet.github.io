@@ -7,12 +7,12 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>标签: 开发板 - Char&#39;s Blog</title>
+<title>分类: 踩坑 - Char&#39;s Blog</title>
 
 
     <meta property="og:type" content="website">
 <meta property="og:title" content="Char&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/tags/%E5%BC%80%E5%8F%91%E6%9D%BF/index.html">
+<meta property="og:url" content="http://yoursite.com/categories/%E8%B8%A9%E5%9D%91/index.html">
 <meta property="og:site_name" content="Char&#39;s Blog">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
@@ -121,8 +121,9 @@
     <div class="card-content">
         <nav class="breadcrumb" aria-label="breadcrumbs">
         <ul>
-            <li><a href="/tags">标签</a></li>
-            <li class="is-active"><a href="#" aria-current="page">开发板</a></li>
+            <li><a href="/categories">分类</a></li>
+            
+            <li class="is-active"><a href="#" aria-current="page">踩坑</a></li>
         </ul>
         </nav>
     </div>
@@ -135,17 +136,17 @@
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-02-29T12:53:20.000Z">2020-02-29</time>
+                <time class="level-item has-text-grey" datetime="2020-03-05T00:43:22.000Z">2020-03-05</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%E6%8A%80%E6%9C%AF/">技术</a>
+                <a class="has-link-grey -link" href="/categories/%E8%B8%A9%E5%9D%91/">踩坑</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    3 分钟 读完 (大约 417 个字)
+                    3 分钟 读完 (大约 466 个字)
                 </span>
                 
                 
@@ -154,23 +155,58 @@
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2020/02/29/ESP32/">ESP32</a>
+                <a class="has-link-black-ter" href="/2020/03/05/fish%E8%BF%90%E8%A1%8Cvenv%E7%9A%84%E5%9D%91/">fish运行venv的坑</a>
             
         </h1>
         <div class="content">
-            <p>今天喜闻乐见的找了一万年我这个ESP32的针脚图，找不到是最真实的，并夕夕的东西果然不敢恭维。</p>
-<p>然后我把一些搜集的资料记录了一下。</p>
-<p>这是开发板的MicroPython官方驱动下载链接：<a href="http://micropython.org/download#esp32">点我</a></p>
+            <p>今天本来打算开始折腾ESP32结果我的esptool和我其他的python包冲突。于是我就去用venv创了一个虚拟环境来搞ESP32。结果发现我特么启动不了环境。他启动环境的文件是<code>&lt;venv&gt;/bin/activate</code>，结果我的fish不兼容bash的语法就打不开这个bash的脚本，我换了一下bash的脚本果然跑起来了。But那个bash太捞了我看不上于是我就去网上搜，发现venv有fish版的脚本是bin目录下的<code>activate.fish</code>。我兴致勃勃的跑去跑结果我的shell给我又包了错。。。。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;/&gt; ~/G/EPS32 ./esp32/bin/activate.fish   </span><br><span class="line">Failed to execute process './esp32/bin/activate.fish'. Reason:</span><br><span class="line">exec: Exec format error</span><br><span class="line">The file './esp32/bin/activate.fish' is marked as an executable but could not be run by the operating system.</span><br></pre></td></tr></table></figure>
+
+<p>我一看，嗯？？？这不是和我运行bash的报错一样嘛？？？？这就非常迷惑了。我就继续去网上找资料，我发现py官网居然有venv的文档，nb！我在文档里看到一个教我启动脚本的，我输了一下那个命令wtf？跑起来了。非常迷惑，那命令和我的差不多。。。。就是多了一个空格，我也不知道是什么神仙操作。。。。</p>
+<p>顺便官方的各个平台运行虚拟环境方法的表格为下：</p>
+<table>
+<thead>
+<tr>
+<th><strong>平台</strong></th>
+<th><strong>Shell</strong></th>
+<th><strong>用于激活虚拟环境的命令</strong></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>POSIX</td>
+<td>bash/zsh</td>
+<td>$ source <venv>/bin/activate</td>
+</tr>
+<tr>
+<td></td>
+<td>fish</td>
+<td>$ . <venv>/bin/activate.fish</td>
+</tr>
+<tr>
+<td></td>
+<td>csh/tcsh</td>
+<td>$ source <venv>/bin/activate.csh</td>
+</tr>
+<tr>
+<td></td>
+<td>PowerShell Core</td>
+<td>$ <venv>/bin/Activate.ps1</td>
+</tr>
+<tr>
+<td>Windows</td>
+<td>cmd.exe</td>
+<td>C:&gt; <venv>\Scripts\activate.bat</td>
+</tr>
+<tr>
+<td></td>
+<td>PowerShell</td>
+<td>PS C:&gt; <venv>\Scripts\Activate.ps1</td>
+</tr>
+</tbody></table>
+<p>另外官方文档对venv的介绍写的不错，里面教程感觉不错就顺便也贴这了（<a href="https://docs.python.org/zh-cn/3/library/venv.html#module-venv">点我</a>）</p>
+
         </div>
         
-        
-        <div class="level is-mobile">
-            <div class="level-start">
-                <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/02/29/ESP32/#more">阅读更多</a>
-                </div>
-            </div>
-        </div>
         
         
     </div>
