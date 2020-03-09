@@ -64,7 +64,7 @@
     <link rel="stylesheet" href="/css/progressbar.css">
 <script src="https://cdn.jsdelivr.net/npm/pace-js@1.0.2/pace.min.js"></script>
     
-    
+    <script async="" src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     
 
 
@@ -122,6 +122,9 @@
 <div class="card">
     
     <div class="card-content article ">
+    	<span id="busuanzi_container_page_pv">
+    	  本文以被阅读<span id="busuanzi_value_page_pv"></span>次
+    	</span>
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
@@ -135,7 +138,7 @@
                 <span class="level-item has-text-grey">
                     
                     
-                    4 分钟 读完 (大约 577 个字)
+                    4 分钟 读完 (大约 578 个字)
                 </span>
                 
                 
@@ -149,32 +152,16 @@
         </h1>
         <div class="content">
             <p>最近入坑了Golang对package的使用很是疑惑，在网上看到了一个很好的文章解释。刚刚看完我记录一下以免忘记。</p>
-<p>首先我们用go mod来创建一个项目，具体怎么创建我就不写了（毕竟本篇内容不是介绍go mod的）。项目树状图如下：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">├ Project			项目文件</span><br><span class="line">| 	go.mod			</span><br><span class="line">|	main.go			</span><br><span class="line">| 	├ pake			存放包用的目录</span><br><span class="line">|	|	Hello.go	自定义的包</span><br></pre></td></tr></table></figure>
-
-<h3 id="Package的使用"><a href="#Package的使用" class="headerlink" title="Package的使用"></a>Package的使用</h3><p>我们来定义一个自定义的包叫<code>Hello.go</code>存放在工程目录的<code>pake</code>文件夹下,源码如下：</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> pake</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">    fmt.Println(<span class="string">"Hello world!"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Hello</span><span class="params">()</span> <span class="title">string</span></span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"hello"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>在我们自定义的包中，package后所跟的应为包所处文件夹的名称，比如这个<code>Hello.go</code>是包含在<code>pake</code>这个文件夹中，所以我们package后跟<code>pake</code>。</p>
-<h3 id="import的使用"><a href="#import的使用" class="headerlink" title="import的使用"></a>import的使用</h3><p>最后我们写一个main包来调用这个包。源码如下：</p>
-<figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> pake</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> （</span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">	<span class="string">"Project/pake"</span></span><br><span class="line">）</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    fmt.Println(pake.Hello())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>go mod定义的项目导入包，写<strong>从工程文件夹到包所处的文件夹</strong>的路径即可，比如我们的Hello这个包就在工程文件夹Project的pake文件夹中，所以我们写做<code>Project/pake</code></p>
-<p>跑了一下程序成功输出了<code>Hello world！</code>说明成功的导入了。</p>
-<p>然而导入的操作还不止这一种操作，以下我们来说一下几种其他的操作:</p>
-<h4 id="定义别名"><a href="#定义别名" class="headerlink" title="定义别名"></a>定义别名</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> pake</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> （</span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">	myPake <span class="string">"Project/pake"</span></span><br><span class="line">）</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    fmt.Println(myPake.Hello())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>这种导入方式可以用来省懒，如果包名太长就可以自定义一下。</p>
-<h4 id="点导入"><a href="#点导入" class="headerlink" title="点导入"></a>点导入</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> pake</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> （</span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">	. <span class="string">"Project/pake"</span></span><br><span class="line">）</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    fmt.Println(Hello())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>用.来导入的话可以直接将包中的方法注册到当前的包中，用是可以直接调用不用在前面写包名前缀</p>
-<h4 id="下划线引用"><a href="#下划线引用" class="headerlink" title="下划线引用"></a>下划线引用</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> pake</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> （</span><br><span class="line">	<span class="string">"fmt"</span></span><br><span class="line">	_ <span class="string">"Project/pake"</span></span><br><span class="line">）</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    fmt.Println(pake.Hello())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>_ 是包引用操作，只会执行包下各模块中的 init 方法，并不会真正的导入包，所以不可以调用包内的其他方法。</p>
-<p><strong>所以我们这一段代码会报错！！！</strong></p>
-
         </div>
         
+        
+        <div class="level is-mobile">
+            <div class="level-start">
+                <div class="level-item">
+                <a class="button is-size-7 is-light" href="/2020/03/09/Golang%E4%B8%ADpackage-import%E7%9A%84%E4%BD%BF%E7%94%A8/#more">阅读更多</a>
+                </div>
+            </div>
+        </div>
         
         
     </div>
@@ -192,6 +179,9 @@
 <div class="card">
     
     <div class="card-content article ">
+    	<span id="busuanzi_container_page_pv">
+    	  本文以被阅读<span id="busuanzi_value_page_pv"></span>次
+    	</span>
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
@@ -246,6 +236,9 @@
 <div class="card">
     
     <div class="card-content article ">
+    	<span id="busuanzi_container_page_pv">
+    	  本文以被阅读<span id="busuanzi_value_page_pv"></span>次
+    	</span>
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
@@ -308,6 +301,9 @@
 <div class="card">
     
     <div class="card-content article ">
+    	<span id="busuanzi_container_page_pv">
+    	  本文以被阅读<span id="busuanzi_value_page_pv"></span>次
+    	</span>
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
@@ -362,6 +358,9 @@
 <div class="card">
     
     <div class="card-content article ">
+    	<span id="busuanzi_container_page_pv">
+    	  本文以被阅读<span id="busuanzi_value_page_pv"></span>次
+    	</span>
         
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
@@ -1062,6 +1061,11 @@
                 Powered by <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a> & <a
                         href="https://github.com/ppoffice/hexo-theme-icarus" target="_blank" rel="noopener">Icarus</a>
                 
+                <br>
+                <span id="busuanzi_container_site_uv">
+                共<span id="busuanzi_value_site_uv">0</span>个访客
+                </span>
+                
                 </p>
             </div>
             <div class="level-end">
@@ -1090,6 +1094,9 @@
         </div>
     </div>
 </footer>
+
+
+
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/moment@2.22.2/min/moment-with-locales.min.js"></script>
 <script>moment.locale("zh-CN");</script>
