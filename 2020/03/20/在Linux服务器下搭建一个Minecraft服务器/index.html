@@ -7,16 +7,22 @@
 
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
 
-<title>标签: 想法 - Char&#39;s Blog</title>
+<title>在Linux服务器下搭建一个Minecraft服务器 - Char&#39;s Blog</title>
 
 
-    <meta property="og:type" content="website">
-<meta property="og:title" content="Char&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/tags/%E6%83%B3%E6%B3%95/index.html">
+    <meta name="description" content="朋友最近租了一台服务器在那闲置，刚好我这几天又回坑mc，我打算用那个服务器开个服供我们俩玩。搭建服务器我们就只要用docker和git非常的简单，有兴趣你可以自己也搭一个玩。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="在Linux服务器下搭建一个Minecraft服务器">
+<meta property="og:url" content="http://yoursite.com/2020/03/20/%E5%9C%A8Linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8B%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AAMinecraft%E6%9C%8D%E5%8A%A1%E5%99%A8/index.html">
 <meta property="og:site_name" content="Char&#39;s Blog">
+<meta property="og:description" content="朋友最近租了一台服务器在那闲置，刚好我这几天又回坑mc，我打算用那个服务器开个服供我们俩玩。搭建服务器我们就只要用docker和git非常的简单，有兴趣你可以自己也搭一个玩。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="http://yoursite.com/images/og_image.png">
+<meta property="article:published_time" content="2020-03-20T08:55:57.000Z">
+<meta property="article:modified_time" content="2020-03-20T15:26:39.916Z">
 <meta property="article:author" content="Char">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Minecraft">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/images/og_image.png">
 
@@ -76,7 +82,7 @@
         <div class="navbar-brand is-flex-center">
             <a class="navbar-item navbar-logo" href="/">
             
-                <img src="/images/Logo.jpg" alt="Char&#39;s Blog" height="28">
+                <img src="/images/Logo.jpg" alt="在Linux服务器下搭建一个Minecraft服务器" height="28">
             
             </a>
         </div>
@@ -117,58 +123,107 @@
     <section class="section">
         <div class="container">
             <div class="columns">
-                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main"><div class="card">
-    <div class="card-content">
-        <nav class="breadcrumb" aria-label="breadcrumbs">
-        <ul>
-            <li><a href="/tags">标签</a></li>
-            <li class="is-active"><a href="#" aria-current="page">想法</a></li>
-        </ul>
-        </nav>
-    </div>
-</div>
-
-    
+                <div class="column is-8-tablet is-8-desktop is-6-widescreen has-order-2 column-main">
 <div class="card">
     
     <div class="card-content article ">
     	
         <div class="level article-meta is-size-7 is-uppercase is-mobile is-overflow-x-auto">
             <div class="level-left">
-                <time class="level-item has-text-grey" datetime="2020-03-01T13:07:40.000Z">2020-03-01</time>
+                <time class="level-item has-text-grey" datetime="2020-03-20T08:55:57.000Z">2020-03-20</time>
                 
                 <div class="level-item">
-                <a class="has-link-grey -link" href="/categories/%E7%81%B5%E6%84%9F/">灵感</a>
+                <a class="has-link-grey -link" href="/categories/%E6%B8%B8%E6%88%8F/">游戏</a>
                 </div>
                 
                 
                 <span class="level-item has-text-grey">
                     
                     
-                    3 分钟 读完 (大约 448 个字)
+                    8 分钟 读完 (大约 1214 个字)
                 </span>
                 
+                
+                <span class="level-item has-text-grey" id="busuanzi_container_page_pv">
+                    <i class="far fa-eye"></i>
+                    <span id="busuanzi_value_page_pv">0</span>次访问
+                </span>
                 
             </div>
         </div>
         
         <h1 class="title is-size-3 is-size-4-mobile has-text-weight-normal">
             
-                <a class="has-link-black-ter" href="/2020/03/01/%E5%B8%90%E5%8F%B7%E4%B8%80%E6%AC%A1%E6%80%A7%E5%AF%86%E7%A0%81/">帐号一次性密码</a>
+                在Linux服务器下搭建一个Minecraft服务器
             
         </h1>
         <div class="content">
-            <p>今天突然来了脑洞，关于平时借号。有时候把QQ借给别人会暴露自己的所有密码（有些人所有平台的密码都是一模一样的）。还有人会乱翻我的收藏夹,不要瞎想没有奇怪东西。所以我就想了想有什么东西可以解决这个问题呢？后来想出了一次性密码这种操作。</p>
+            <p>朋友最近租了一台服务器在那闲置，刚好我这几天又回坑mc，我打算用那个服务器开个服供我们俩玩。搭建服务器我们就只要用docker和git非常的简单，有兴趣你可以自己也搭一个玩。</p>
+<a id="more"></a>
+
+<h3 id="SSH的坑"><a href="#SSH的坑" class="headerlink" title="SSH的坑"></a>SSH的坑</h3><p>首先就是把ssh搞一下，咱的ssh一段时间不操作的话服务器会断开连接非常蛋疼，经常下东西下一半我连接就断了。这个解决方案百度上很多，我就记录一下我用方案把。</p>
+<p>我是用修改Config文件的方法去解决的，听说可以命令后带参数，但是我这种懒人肯定使用一劳永逸的方法啦～</p>
+<p>我们找到所在用户的.ssh目录，如果是root用户就在<code>/root/.ssh</code>下创建一个config文件</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> nvim ~/.ssh/config</span></span><br></pre></td></tr></table></figure>
+
+<p>在这个文档中加一句</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ServerAlinveInterval 60</span><br></pre></td></tr></table></figure>
+
+<p>保存退出，然后重启一下shell即可。</p>
+<h3 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h3><p>docker是一种虚拟化容器，可以快速搭建一个环境。</p>
+<p>我这个服务器是Ubuntu的，包管理器和CentOS不一样，所以CentOS安装步骤就自己去搜一下吧。</p>
+<p>Ubuntu用的是apt，安装的话就一行命令即可。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo apt install docker.io</span></span><br></pre></td></tr></table></figure>
+
+<p>查看安装成功就用万年查版本。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> snap info docker</span></span><br><span class="line">name:      docker</span><br><span class="line">summary:   Docker container runtime</span><br><span class="line">publisher: Canonical✓</span><br><span class="line">contact:   snappy-devel@lists.ubuntu.com</span><br><span class="line">license:   Apache-2.0</span><br><span class="line">description: |</span><br><span class="line">  Build and run container images with Docker.</span><br><span class="line">  </span><br><span class="line">  This build requires all files that Docker uses, such as dockerfiles, to be in $HOME. Keep files</span><br><span class="line">  there for 'docker build', 'docker save' and 'docker load'.</span><br><span class="line">  </span><br><span class="line">  This snap is built by Canonical based on source code published by Docker, Inc. It is not endorsed</span><br><span class="line">  or published by Docker, Inc.</span><br><span class="line">  </span><br><span class="line">  Docker and the Docker logo are trademarks or registered trademarks of Docker, Inc. in the United</span><br><span class="line">  States and/or other countries. Docker, Inc. and other parties may also have trademark rights in</span><br><span class="line">  other terms used herein.</span><br><span class="line">snap-id: sLCsFAO8PKM5Z0fAKNszUOX0YASjQfeZ</span><br><span class="line">channels:</span><br><span class="line">  stable:          18.09.9      2019-11-18 (423) 126MB -</span><br><span class="line">  candidate:       18.09.9      2020-03-18 (428) 126MB -</span><br><span class="line">  beta:            18.09.9      2020-03-18 (428) 126MB -</span><br><span class="line">  edge:            18.09.9      2020-03-18 (428) 126MB -</span><br><span class="line">  17.09/stable:    –                                   </span><br><span class="line">  17.09/candidate: 17.09.1-ce   2017-12-22 (232)  44MB -</span><br><span class="line">  17.09/beta:      17.09.1-ce   2017-12-20 (232)  44MB -</span><br><span class="line">  17.09/edge:      17.09.1-ce   2017-12-14 (232)  44MB -</span><br><span class="line">  17.06/stable:    17.06.2-ce   2017-12-22 (179)  43MB -</span><br><span class="line">  17.06/candidate: 17.06.2-ce   2017-10-10 (179)  43MB -</span><br><span class="line">  17.06/beta:      ↑                                   </span><br><span class="line">  17.06/edge:      17.06.2-ce-1 2018-01-03 (237)  44MB -</span><br><span class="line">  17.03/stable:    17.03.2-ce-1 2017-07-20 (159)  42MB -</span><br><span class="line">  17.03/candidate: 17.03.2-ce-1 2017-06-30 (159)  42MB -</span><br><span class="line">  17.03/beta:      ↑                                   </span><br><span class="line">  17.03/edge:      17.03.2-ce-1 2017-06-30 (159)  42MB -</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装Minecraft服务器"><a href="#安装Minecraft服务器" class="headerlink" title="安装Minecraft服务器"></a>安装Minecraft服务器</h3><p>首先就拉取一下映像</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker pull itzg/minecraft-server</span></span><br></pre></td></tr></table></figure>
+
+<p>下载过程可能有点慢，耐心等一下就好。今天搞这个最开始用别的方法等了3个小时最后换这个方法半小时不到就搭建好了感动世界。</p>
+<p>拉取完毕后能直接运行啦</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">-p 25565:25565 \</span><br><span class="line">-e EULA=TRUE \</span><br><span class="line">-e VERSION=1.13.3 \</span><br><span class="line">-v ~/mc-server:/data \</span><br><span class="line">--name mc itzg/minecraft-server</span><br></pre></td></tr></table></figure>
+
+<p>为了看得清楚就分段写了。解释一下参数：</p>
+<ul>
+<li>-p后是mc服务器的端口，是将容器的端口映射到服务器端口上（前是容器端口，后是服务器端口）</li>
+<li>第一个-e是同意EULA协议</li>
+<li>第二个-e是游戏的版本，我这里刚回坑太高的版本玩的怀疑人生就1.13.2了</li>
+<li>-v是mc服务器的数据存储位置，把冒号前的地址改为你的存放路径即可</li>
+<li>–name是指定容器名这里是mc</li>
+</ul>
+<h4 id="踩坑记录"><a href="#踩坑记录" class="headerlink" title="踩坑记录"></a>踩坑记录</h4><p>如果你和我一样是Ubuntu18.04那能运行是出了鬼了。这里小小的踩了坑，我在网上找到了解决方案我就搬运一下啦，懒得自己写<a href="https://blog.csdn.net/jiangjiang_jian/article/details/89452631">(原地址)</a>。</p>
+<p>在Ubuntu18.04安装docker之后，以登陆用户身份启动docker出错：</p>
+<p>执行docker相关命令（如docker ps -a），出现</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Got permission denied while trying to connect to the Docker daemon socket at unix:&#x2F;&#x2F;&#x2F;var&#x2F;run&#x2F;docker.sock: Get http:&#x2F;&#x2F;%2Fvar%2Frun%2Fdocker.sock&#x2F;v1.39&#x2F;containers&#x2F;json?all&#x3D;1: dial unix &#x2F;var&#x2F;run&#x2F;docker.sock: connect: permission denied</span><br></pre></td></tr></table></figure>
+
+
+<p>原因是：docker进程使用Unix Socket而不是TCP端口。而默认情况下，Unix socket属于root用户，需要root权限才能访问。</p>
+<h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p>1、使用sudo获取管理员权限，运行docker命令，如：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker ps -a</span><br></pre></td></tr></table></figure>
+
+<p>2、在安装docker时，已经创建了一个名为docker的用户组，守护进程启动的时候，会默认赋予用户组docker读写Unix socket的权限，因此只要将当前用户加入到docker用户组中，那当前用户就有权限访问Unix socket了，进而也就可以执行docker相关命令</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo gpasswd -a $USER docker     #将登陆用户加入到docker用户组中</span><br><span class="line">newgrp docker     #更新用户组</span><br><span class="line">docker ps -a    #测试docker命令是否可以使用sudo正常使用</span><br></pre></td></tr></table></figure>
+
+
+<p>如果用户组docker不存在（安装完一般就有了），则可先创建该用户组：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo groupadd docker     #创建docker用户组</span><br></pre></td></tr></table></figure>
+
+<p>(PS:你按命令走下来估计问题就解决了，然后run一下)</p>
+<p>现在是晚上11点半，我要开始我的mc之旅了～～</p>
+
         </div>
         
-        
-        <div class="level is-mobile">
+        <div class="level is-size-7 is-uppercase">
             <div class="level-start">
                 <div class="level-item">
-                <a class="button is-size-7 is-light" href="/2020/03/01/%E5%B8%90%E5%8F%B7%E4%B8%80%E6%AC%A1%E6%80%A7%E5%AF%86%E7%A0%81/#more">阅读更多</a>
+                    <span class="is-size-6 has-text-grey has-mr-7">#</span>
+                    <a class="has-link-grey -link" href="/tags/Linux/" rel="tag">Linux</a>, <a class="has-link-grey -link" href="/tags/Minecraft/" rel="tag">Minecraft</a>
                 </div>
             </div>
         </div>
+        
         
         
     </div>
@@ -176,11 +231,64 @@
 
 
 
+<div class="card">
+    <div class="card-content">
+        <h3 class="menu-label has-text-centered">喜欢这篇文章？打赏一下作者吧</h3>
+        <div class="buttons is-centered">
+            
+                
+<a class="button is-success donate">
+    <span class="icon is-small">
+        <i class="fab fa-weixin"></i>
+    </span>
+    <span>微信</span>
+    <div class="qrcode"><img src="/images/wechat.jpg" alt="微信"></div>
+</a>
+
+                
+        </div>
+    </div>
+</div>
 
 
 
+<div class="card card-transparent">
+    <div class="level post-navigation is-flex-wrap is-mobile">
+        
+        
+        <div class="level-end">
+            <a class="level level-item has-link-grey  article-nav-next" href="/2020/03/15/%E5%BF%AB%E4%B9%90%E5%8F%88%E8%87%AA%E9%97%AD%E7%9A%84%E6%97%A5%E5%B8%B8/">
+                <span class="level-item">快乐又自闭的日常</span>
+                <i class="level-item fas fa-chevron-right"></i>
+            </a>
+        </div>
+        
+    </div>
+</div>
 
 
+
+<div class="card">
+    <div class="card-content">
+        <h3 class="title is-5 has-text-weight-normal">评论</h3>
+        
+<div id="valine-thread" class="content"></div>
+<script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/valine@1.3.10/dist/Valine.min.js"></script>
+<script>
+    new Valine({
+        el: '#valine-thread' ,
+        notify: false,
+        verify: false,
+        app_id: 'hbwxoXCzCRqaI7J9ydj4zKws-gzGzoHsz',
+        app_key: 'EI7PsFEeK8ivWQEtJhdLAzX8',
+        placeholder: 'Say something...'
+    });
+</script>
+
+
+    </div>
+</div>
 
 </div>
                 
@@ -851,7 +959,7 @@
             <div class="level-start has-text-centered-mobile">
                 <a class="footer-logo is-block has-mb-6" href="/">
                 
-                    <img src="/images/Logo.jpg" alt="Char&#39;s Blog" height="28">
+                    <img src="/images/Logo.jpg" alt="在Linux服务器下搭建一个Minecraft服务器" height="28">
                 
                 </a>
                 <p class="is-size-7">
