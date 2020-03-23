@@ -1,0 +1,348 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Char&#39;s Blog</title>
+  
+  <subtitle>Welcome to my blog.</subtitle>
+  <link href="/rss.xml" rel="self"/>
+  
+  <link href="http://charet.github.io/"/>
+  <updated>2020-03-23T15:03:44.963Z</updated>
+  <id>http://charet.github.io/</id>
+  
+  <author>
+    <name>Char</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于回形针，发个牢骚</title>
+    <link href="http://charet.github.io/2020/03/23/%E5%85%B3%E4%BA%8E%E5%9B%9E%E5%BD%A2%E9%92%88/"/>
+    <id>http://charet.github.io/2020/03/23/%E5%85%B3%E4%BA%8E%E5%9B%9E%E5%BD%A2%E9%92%88/</id>
+    <published>2020-03-23T09:19:14.000Z</published>
+    <updated>2020-03-23T15:03:44.963Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近貌似一个b站上的科普团队回形针PaperClip辱华还有破坏中国地图完整。</p><p>我昨晚睡前日常刷一下b站看看有没有什么错过的好视频，最近玩MC玩的太凶了b站没怎么看过就睡前看看。我看到回形针发了一个<a href="https://t.bilibili.com/369270512043057539?tab=2">道歉动态</a>，非常懵逼，就去看了一下。大概就是说有人觉得他们言行不对，觉得他们说了巴西森林面积减少是怪中国人吃肉。视频也给删了，具体什么样我也不晓得我也不评论。还有一个就是他们早期一个视频中在Youtube上发的一个视频把中国地图上的台湾给抹掉了。嗯这些是我也懒得想懒得评论，不知道最近怎么越来越懒了。</p><p>但是吧，我特么在哪都看到关于这个事情的东西就非常烦人了，各个地方都是要讨伐的，下面全是骂人的评论，这对我的互联网体验非常的不友好。这事情要解决直接去举报就好了，到处去虚张声势有什么意思，问题解决的了吗？所以我现在有点反感社交软件，我把QQ也删掉了，微信要交作业没办法就没删了。我自己去静静吧，等风波过去了我再把QQ下回来。</p><p>B站上也是，也到处都是，我有点想开个小号看了，奈何没有手机号了。对了，B站最近风气也越来越怪了，在私下出现了一个捶人区，揭发其他UP以前做过的错事，捶人的UP名字我就不说了都知道，以免被什么正义凌然的人看见被人肉。还是原来的那句话，有事去举报，没事别乱bb。这种事我觉得就和甜豆腐脑与咸豆腐脑哪个好吃一样，赤裸裸的引战行为。人哪有没做过坏事，自己埋藏在心中改过自新就好了。我去年看到b站给我推送这种视频我都想退站了，目前没有找到墙内有什么好的视频网站，找到了我估计差不多该退了。</p><p>事情就是这样，没事发发牢骚。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;最近貌似一个b站上的科普团队回形针PaperClip辱华还有破坏中国地图完整。&lt;/p&gt;
+&lt;p&gt;我昨晚睡前日常刷一下b站看看有没有什么错过的好视频，最近玩MC玩的太凶了b站没怎么看过就睡前看看。我看到回形针发了一个&lt;a href=&quot;https://t.bilibili.com
+      
+    
+    </summary>
+    
+    
+      <category term="胡扯" scheme="http://charet.github.io/categories/%E8%83%A1%E6%89%AF/"/>
+    
+    
+      <category term="生活" scheme="http://charet.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>在Linux服务器下搭建一个Minecraft服务器</title>
+    <link href="http://charet.github.io/2020/03/20/%E5%9C%A8Linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8B%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AAMinecraft%E6%9C%8D%E5%8A%A1%E5%99%A8/"/>
+    <id>http://charet.github.io/2020/03/20/%E5%9C%A8Linux%E6%9C%8D%E5%8A%A1%E5%99%A8%E4%B8%8B%E6%90%AD%E5%BB%BA%E4%B8%80%E4%B8%AAMinecraft%E6%9C%8D%E5%8A%A1%E5%99%A8/</id>
+    <published>2020-03-20T08:55:57.000Z</published>
+    <updated>2020-03-20T16:47:10.103Z</updated>
+    
+    <content type="html"><![CDATA[<p>朋友最近租了一台服务器在那闲置，刚好我这几天又回坑mc，我打算用那个服务器开个服供我们俩玩。搭建服务器我们就只要用docker非常的简单，有兴趣你可以自己也搭一个玩。</p><a id="more"></a><h3 id="SSH的坑"><a href="#SSH的坑" class="headerlink" title="SSH的坑"></a>SSH的坑</h3><p>首先就是把ssh搞一下，咱的ssh一段时间不操作的话服务器会断开连接非常蛋疼，经常下东西下一半我连接就断了。这个解决方案百度上很多，我就记录一下我用方案把。</p><p>我是用修改Config文件的方法去解决的，听说可以命令后带参数，但是我这种懒人肯定使用一劳永逸的方法啦～</p><p>我们找到所在用户的.ssh目录，如果是root用户就在<code>/root/.ssh</code>下创建一个config文件</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> nvim ~/.ssh/config</span></span><br></pre></td></tr></table></figure><p>在这个文档中加一句</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ServerAlinveInterval 60</span><br></pre></td></tr></table></figure><p>保存退出，然后重启一下shell即可。</p><h3 id="安装docker"><a href="#安装docker" class="headerlink" title="安装docker"></a>安装docker</h3><p>docker是一种虚拟化容器，可以快速搭建一个环境。</p><p>我这个服务器是Ubuntu的，包管理器和CentOS不一样，所以CentOS安装步骤就自己去搜一下吧。</p><p>Ubuntu用的是apt，安装的话就一行命令即可。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> sudo apt install docker.io</span></span><br></pre></td></tr></table></figure><p>查看安装成功就用万年查版本。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> snap info docker</span></span><br><span class="line">name:      docker</span><br><span class="line">summary:   Docker container runtime</span><br><span class="line">publisher: Canonical✓</span><br><span class="line">contact:   snappy-devel@lists.ubuntu.com</span><br><span class="line">license:   Apache-2.0</span><br><span class="line">description: |</span><br><span class="line">  Build and run container images with Docker.</span><br><span class="line">  </span><br><span class="line">  This build requires all files that Docker uses, such as dockerfiles, to be in $HOME. Keep files</span><br><span class="line">  there for 'docker build', 'docker save' and 'docker load'.</span><br><span class="line">  </span><br><span class="line">  This snap is built by Canonical based on source code published by Docker, Inc. It is not endorsed</span><br><span class="line">  or published by Docker, Inc.</span><br><span class="line">  </span><br><span class="line">  Docker and the Docker logo are trademarks or registered trademarks of Docker, Inc. in the United</span><br><span class="line">  States and/or other countries. Docker, Inc. and other parties may also have trademark rights in</span><br><span class="line">  other terms used herein.</span><br><span class="line">snap-id: sLCsFAO8PKM5Z0fAKNszUOX0YASjQfeZ</span><br><span class="line">channels:</span><br><span class="line">  stable:          18.09.9      2019-11-18 (423) 126MB -</span><br><span class="line">  candidate:       18.09.9      2020-03-18 (428) 126MB -</span><br><span class="line">  beta:            18.09.9      2020-03-18 (428) 126MB -</span><br><span class="line">  edge:            18.09.9      2020-03-18 (428) 126MB -</span><br><span class="line">  17.09/stable:    –                                   </span><br><span class="line">  17.09/candidate: 17.09.1-ce   2017-12-22 (232)  44MB -</span><br><span class="line">  17.09/beta:      17.09.1-ce   2017-12-20 (232)  44MB -</span><br><span class="line">  17.09/edge:      17.09.1-ce   2017-12-14 (232)  44MB -</span><br><span class="line">  17.06/stable:    17.06.2-ce   2017-12-22 (179)  43MB -</span><br><span class="line">  17.06/candidate: 17.06.2-ce   2017-10-10 (179)  43MB -</span><br><span class="line">  17.06/beta:      ↑                                   </span><br><span class="line">  17.06/edge:      17.06.2-ce-1 2018-01-03 (237)  44MB -</span><br><span class="line">  17.03/stable:    17.03.2-ce-1 2017-07-20 (159)  42MB -</span><br><span class="line">  17.03/candidate: 17.03.2-ce-1 2017-06-30 (159)  42MB -</span><br><span class="line">  17.03/beta:      ↑                                   </span><br><span class="line">  17.03/edge:      17.03.2-ce-1 2017-06-30 (159)  42MB -</span><br></pre></td></tr></table></figure><h3 id="安装Minecraft服务器"><a href="#安装Minecraft服务器" class="headerlink" title="安装Minecraft服务器"></a>安装Minecraft服务器</h3><p>首先就拉取一下映像</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> docker pull itzg/minecraft-server</span></span><br></pre></td></tr></table></figure><p>下载过程可能有点慢，耐心等一下就好。今天搞这个最开始用别的方法等了3个小时最后换这个方法半小时不到就搭建好了感动世界。</p><p>拉取完毕后能直接运行啦</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">-p 25565:25565 \</span><br><span class="line">-e EULA=TRUE \</span><br><span class="line">-e VERSION=1.13.3 \</span><br><span class="line">-v ~/mc-server:/data \</span><br><span class="line">--name mc itzg/minecraft-server</span><br></pre></td></tr></table></figure><p>为了看得清楚就分段写了。解释一下参数：</p><ul><li>-p后是mc服务器的端口，是将容器的端口映射到服务器端口上（前是容器端口，后是服务器端口）</li><li>第一个-e是同意EULA协议</li><li>第二个-e是游戏的版本，我这里刚回坑太高的版本玩的怀疑人生就1.13.2了</li><li>-v是mc服务器的数据存储位置，把冒号前的地址改为你的存放路径即可</li><li>–name是指定容器名这里是mc</li></ul><h4 id="踩坑记录"><a href="#踩坑记录" class="headerlink" title="踩坑记录"></a>踩坑记录</h4><p>如果你和我一样是Ubuntu18.04那能运行是出了鬼了。这里小小的踩了坑，我在网上找到了解决方案我就搬运一下啦，懒得自己写<a href="https://blog.csdn.net/jiangjiang_jian/article/details/89452631">(原地址)</a>。</p><p>在Ubuntu18.04安装docker之后，以登陆用户身份启动docker出错：</p><p>执行docker相关命令（如docker ps -a），出现</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Got permission denied while trying to connect to the Docker daemon socket at unix:&#x2F;&#x2F;&#x2F;var&#x2F;run&#x2F;docker.sock: Get http:&#x2F;&#x2F;%2Fvar%2Frun%2Fdocker.sock&#x2F;v1.39&#x2F;containers&#x2F;json?all&#x3D;1: dial unix &#x2F;var&#x2F;run&#x2F;docker.sock: connect: permission denied</span><br></pre></td></tr></table></figure><p>原因是：docker进程使用Unix Socket而不是TCP端口。而默认情况下，Unix socket属于root用户，需要root权限才能访问。</p><h4 id="解决方案"><a href="#解决方案" class="headerlink" title="解决方案"></a>解决方案</h4><p>1、使用sudo获取管理员权限，运行docker命令，如：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo docker ps -a</span><br></pre></td></tr></table></figure><p>2、在安装docker时，已经创建了一个名为docker的用户组，守护进程启动的时候，会默认赋予用户组docker读写Unix socket的权限，因此只要将当前用户加入到docker用户组中，那当前用户就有权限访问Unix socket了，进而也就可以执行docker相关命令</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sudo gpasswd -a $USER docker     #将登陆用户加入到docker用户组中</span><br><span class="line">newgrp docker     #更新用户组</span><br><span class="line">docker ps -a    #测试docker命令是否可以使用sudo正常使用</span><br></pre></td></tr></table></figure><p>如果用户组docker不存在（安装完一般就有了），则可先创建该用户组：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo groupadd docker     #创建docker用户组</span><br></pre></td></tr></table></figure><p>(PS:你按命令走下来估计问题就解决了，然后run一下)</p><h3 id="关于非正版登录"><a href="#关于非正版登录" class="headerlink" title="关于非正版登录"></a>关于非正版登录</h3><p>有些小伙伴家境贫寒付费不起就玩盗版，如果是默认的话盗版是无法登录的。我们需要去修改一下服务器存放目录下的<code>server.properties</code>文件中的<code>online-mode</code>把后面的<code>ture</code>改成<code>false</code>即可。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;朋友最近租了一台服务器在那闲置，刚好我这几天又回坑mc，我打算用那个服务器开个服供我们俩玩。搭建服务器我们就只要用docker非常的简单，有兴趣你可以自己也搭一个玩。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="游戏" scheme="http://charet.github.io/categories/%E6%B8%B8%E6%88%8F/"/>
+    
+    
+      <category term="Linux" scheme="http://charet.github.io/tags/Linux/"/>
+    
+      <category term="Minecraft" scheme="http://charet.github.io/tags/Minecraft/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>快乐又自闭的日常</title>
+    <link href="http://charet.github.io/2020/03/15/%E5%BF%AB%E4%B9%90%E5%8F%88%E8%87%AA%E9%97%AD%E7%9A%84%E6%97%A5%E5%B8%B8/"/>
+    <id>http://charet.github.io/2020/03/15/%E5%BF%AB%E4%B9%90%E5%8F%88%E8%87%AA%E9%97%AD%E7%9A%84%E6%97%A5%E5%B8%B8/</id>
+    <published>2020-03-15T14:22:45.000Z</published>
+    <updated>2020-03-23T15:04:35.445Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天我关注的一个宝藏UP终于更新了，他是在b站上的一个全栈的开发者（栈都溢出了）叫<a href="https://space.bilibili.com/20259914">稚晖君</a>。最早关注他是因为他做了一个叫“linux card”的卡片电脑，我对这种小玩意挺感兴趣的。他的那个卡片电脑大概就两个一块钱硬币一样大，不知道比树霉派小到哪里去了。后来他在前几个月预告了一个迷你的服务器，哇我无敌期待。又是那种袖珍的，还放出了概念图。看着麻雀虽小五脏俱全，比一块钱硬币大一点却连显示器都有。一个字NB。今天视频终于做出来了<a href="https://www.bilibili.com/video/av96244032">（点我去看！）</a>！视频内容及其硬核，UP啥玩意都是自己搞的，电路设计绘制、主板元件的焊接、软件的编写适配真的无敌，视频还剪的完美，tql。我看完不经感叹人生的一事无成，要是我也会那么多就好了，酸就完事了。我觉得我大学的时候应该大概可能也许差不多会变强吧，谁知道呢。目前在学go我要老老实实的学好，我感觉这个语言挺好的，就是太标新立异了。你说像C吧，他毫无疑问是C家族的，你说他不像吧，他是真的骚把好多地方改的我一点都不适应，记得我非常混乱。</p><p>后来我把视频也分享到了空间，我的一位朋友看见了也表示了和我一样的心情，后来聊着聊着就拉去入了linux，日常给linux免费打广告还不要钱，<del>linus打钱</del>!（误）。他用不了电脑我就叫他下个终端去体验linux，反正本质上是一样的。教了他一点命令他产生了兴趣跑去b站学了，然后我就跑来写博客了hhh。想想拉朋友来学电脑好快乐，我也不知道为什么会这样。所以我觉得我对中国软件事业是有帮助的，我拉人入坑说不定就出了大佬呢？</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;今天我关注的一个宝藏UP终于更新了，他是在b站上的一个全栈的开发者（栈都溢出了）叫&lt;a href=&quot;https://space.bilibili.com/20259914&quot;&gt;稚晖君&lt;/a&gt;。最早关注他是因为他做了一个叫“linux card”的卡片电脑，我对这种小玩意挺感兴
+      
+    
+    </summary>
+    
+    
+      <category term="日常记录" scheme="http://charet.github.io/categories/%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/"/>
+    
+    
+      <category term="生活" scheme="http://charet.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Golang中package/import的使用</title>
+    <link href="http://charet.github.io/2020/03/09/Golang%E4%B8%ADpackage-import%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>http://charet.github.io/2020/03/09/Golang%E4%B8%ADpackage-import%E7%9A%84%E4%BD%BF%E7%94%A8/</id>
+    <published>2020-03-08T16:28:02.000Z</published>
+    <updated>2020-03-08T17:04:43.256Z</updated>
+    
+    <content type="html"><![CDATA[<p>最近入坑了Golang对package的使用很是疑惑，在网上看到了一个很好的文章解释。刚刚看完我记录一下以免忘记。</p><a id="more"></a><p>首先我们用go mod来创建一个项目，具体怎么创建我就不写了（毕竟本篇内容不是介绍go mod的）。项目树状图如下：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">├ Project项目文件</span><br><span class="line">| go.mod</span><br><span class="line">|main.go</span><br><span class="line">| ├ pake存放包用的目录</span><br><span class="line">||Hello.go自定义的包</span><br></pre></td></tr></table></figure><h3 id="Package的使用"><a href="#Package的使用" class="headerlink" title="Package的使用"></a>Package的使用</h3><p>我们来定义一个自定义的包叫<code>Hello.go</code>存放在工程目录的<code>pake</code>文件夹下,源码如下：</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> pake</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> <span class="string">"fmt"</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">init</span><span class="params">()</span></span>&#123;</span><br><span class="line">    fmt.Println(<span class="string">"Hello world!"</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">Hello</span><span class="params">()</span> <span class="title">string</span></span> &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="string">"hello"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>在我们自定义的包中，package后所跟的应为包所处文件夹的名称，比如这个<code>Hello.go</code>是包含在<code>pake</code>这个文件夹中，所以我们package后跟<code>pake</code>。</p><h3 id="import的使用"><a href="#import的使用" class="headerlink" title="import的使用"></a>import的使用</h3><p>最后我们写一个main包来调用这个包。源码如下：</p><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> pake</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> （</span><br><span class="line"><span class="string">"fmt"</span></span><br><span class="line"><span class="string">"Project/pake"</span></span><br><span class="line">）</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    fmt.Println(pake.Hello())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>go mod定义的项目导入包，写<strong>从工程文件夹到包所处的文件夹</strong>的路径即可，比如我们的Hello这个包就在工程文件夹Project的pake文件夹中，所以我们写做<code>Project/pake</code></p><p>跑了一下程序成功输出了<code>Hello world！</code>说明成功的导入了。</p><p>然而导入的操作还不止这一种操作，以下我们来说一下几种其他的操作:</p><h4 id="定义别名"><a href="#定义别名" class="headerlink" title="定义别名"></a>定义别名</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> pake</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> （</span><br><span class="line"><span class="string">"fmt"</span></span><br><span class="line">myPake <span class="string">"Project/pake"</span></span><br><span class="line">）</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    fmt.Println(myPake.Hello())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这种导入方式可以用来省懒，如果包名太长就可以自定义一下。</p><h4 id="点导入"><a href="#点导入" class="headerlink" title="点导入"></a>点导入</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> pake</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> （</span><br><span class="line"><span class="string">"fmt"</span></span><br><span class="line">. <span class="string">"Project/pake"</span></span><br><span class="line">）</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    fmt.Println(Hello())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>用.来导入的话可以直接将包中的方法注册到当前的包中，用是可以直接调用不用在前面写包名前缀</p><h4 id="下划线引用"><a href="#下划线引用" class="headerlink" title="下划线引用"></a>下划线引用</h4><figure class="highlight go"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> pake</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> （</span><br><span class="line"><span class="string">"fmt"</span></span><br><span class="line">_ <span class="string">"Project/pake"</span></span><br><span class="line">）</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">func</span> <span class="title">main</span><span class="params">()</span></span>&#123;</span><br><span class="line">    fmt.Println(pake.Hello())</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>_ 是包引用操作，只会执行包下各模块中的 init 方法，并不会真正的导入包，所以不可以调用包内的其他方法。</p><p><strong>所以我们这一段代码会报错！！！</strong></p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;最近入坑了Golang对package的使用很是疑惑，在网上看到了一个很好的文章解释。刚刚看完我记录一下以免忘记。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="http://charet.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Golang" scheme="http://charet.github.io/tags/Golang/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>创建swap分区</title>
+    <link href="http://charet.github.io/2020/03/07/%E5%88%9B%E5%BB%BAswap%E5%88%86%E5%8C%BA/"/>
+    <id>http://charet.github.io/2020/03/07/%E5%88%9B%E5%BB%BAswap%E5%88%86%E5%8C%BA/</id>
+    <published>2020-03-07T10:58:02.000Z</published>
+    <updated>2020-03-07T11:11:07.897Z</updated>
+    
+    <content type="html"><![CDATA[<p>这要从我安装系统的时候说起，我当时比较傻不知道要分swap分区。后来发现内存不够用了网上都说要分区，就各种去找教程去分。后来搞好了，也不麻烦非常的快乐。记录一下以免以后又到处找，虽然一搜一堆。</p><a id="more"></a><p>首先我们要分一块区域给swap，命令最后的分区是分给swap分区的大小，这里是8GB。这个分区的大小差不多是你内存的两倍就行。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> dd <span class="keyword">if</span>=/dev/zero of=/swapfile bs=1k count=8192000</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> mkswap /swapfile</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> swapon /swapfile</span></span><br></pre></td></tr></table></figure><p>之后我们就修改一下<code>/etc/fstab</code>文件，使swap开机的时候会自动挂载。在这个文件结尾添加此句即可。</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;swapfile swap swap defaults 0 0</span><br></pre></td></tr></table></figure><p>保存一下重启，在终端用free命令看看swap挂载成功没。swap就是那个交换内存，如果不是0了就说明挂载成功。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;这要从我安装系统的时候说起，我当时比较傻不知道要分swap分区。后来发现内存不够用了网上都说要分区，就各种去找教程去分。后来搞好了，也不麻烦非常的快乐。记录一下以免以后又到处找，虽然一搜一堆。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="http://charet.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Linux" scheme="http://charet.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ESP32入门到入土 1</title>
+    <link href="http://charet.github.io/2020/03/05/ESP32%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9C%9F-1/"/>
+    <id>http://charet.github.io/2020/03/05/ESP32%E5%85%A5%E9%97%A8%E5%88%B0%E5%85%A5%E5%9C%9F-1/</id>
+    <published>2020-03-05T03:12:31.000Z</published>
+    <updated>2020-03-05T09:13:17.524Z</updated>
+    
+    <content type="html"><![CDATA[<p>开一个坑来记录一下我玩esp32的路。</p><p>我电脑的环境如下</p><blockquote><p>系统：Manjrao19</p><p>Python版本：3.8.1</p><p>Shell：fish</p></blockquote><p>这一篇来说一下刷固件什么的以及我踩的坑。</p><p>我基于MicroPython开发的，ArdoinoC要去学C短期玩玩开发板去重新学一门语言好累，加上C那玩意搞得我头皮发麻就没这个想法了，后来发现Python也可以写，那不何乐而不为？</p><a id="more"></a><h3 id="烧录工具-esptool-安装"><a href="#烧录工具-esptool-安装" class="headerlink" title="烧录工具(esptool)安装"></a>烧录工具(esptool)安装</h3><p>我们刷MicoPython的工具叫<code>esptool</code>。为了方便管理吧，我就为esp32单独开了一个venv。<del>其实是esptool和我的一个包冲突</del>。话不多说我么先来配置一下virtualenv的环境。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> virtualenv esp32</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> chmod 755 esp32/bin/activate</span></span><br><span class="line"><span class="meta">$</span><span class="bash"> ./acrivate</span></span><br><span class="line"><span class="meta">(esp32)$</span><span class="bash"> pip install esptool</span></span><br></pre></td></tr></table></figure><p>我来稍微解释一下以上命令的意思</p><ul><li><p>第一行是说在当前目录下建立一个esp32的虚拟环境。</p></li><li><p>第二行是把启动虚拟环境的文件给予可执行权限。</p></li><li><p>第三行是启动虚拟环境,若启动成功了终端会加一个<code>(环境名)</code>的前缀,就像第四行前一样。</p></li><li><p>第四行是在虚拟环境中安装esptool。</p></li></ul><h3 id="擦除Flash"><a href="#擦除Flash" class="headerlink" title="擦除Flash"></a>擦除Flash</h3><p>如果你的ESP32刚到手上应该先去吧他的Flash擦除一下，这样才能刷如MicroPython。擦除过程非常简单，但是我搞了半天踩了坑，淦。</p><p>首先我们先去看看我们esp32用了那个串口</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> ls /dev/ttyUSB*</span></span><br><span class="line">crw-rw---- 1 root uucp 188, 0  3月  5 10:07 /dev/ttyUSB0</span><br></pre></td></tr></table></figure><p>输出就只有一个所以很明显我的板子用的是ttyUSB0这个串口。</p><p>有了串口我们就可以真正的去擦Flash了</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">(esp32)$</span><span class="bash"> sudo esptool.py --port /dev/ttyUSB0 erase_flash</span></span><br><span class="line">esptool.py v2.8</span><br><span class="line">Serial port /dev/ttyUSB0</span><br><span class="line">Connecting.....</span><br><span class="line">Detecting chip type... ESP32</span><br><span class="line">Chip is ESP32D0WDQ6 (revision 1)</span><br><span class="line">Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None</span><br><span class="line">WARNING: Detected crystal freq 41.01MHz is quite different to normalized freq 40MHz. Unsupported crystal in use?</span><br><span class="line">Crystal is 40MHz</span><br><span class="line">MAC: 24:6f:28:b6:14:04</span><br><span class="line">Uploading stub...</span><br><span class="line">Running stub...</span><br><span class="line">Stub running...</span><br><span class="line">Erasing flash (this may take a while)...</span><br><span class="line">Chip erase completed successfully in 9.2s</span><br><span class="line">Hard resetting via RTS pin...</span><br></pre></td></tr></table></figure><p>记得命令跑起来的时候按一下板子上的boot键，我当时就没按导致一直报错。如果你的输出和我差不多那估计就擦好了。</p><h3 id="固件刷入"><a href="#固件刷入" class="headerlink" title="固件刷入"></a>固件刷入</h3><p>固件我们首先去<a href="http://micropython.org/download#esp32">MicroPyhton官网</a>去下,我不记得在那看到有个大佬说固件貌似v1.10及以上的版本刷不进去。不知道是不是真的，我为了尽量不浪费时间就下了<a href="http://micropython.org/resources/firmware/esp32-idf3-20180511-v1.9.4.bin">v1.9.4</a>。要是各位愿意可以去试试，要是可以记得评论和我说一下，谢谢了。</p><p>下载好我们去看看固件的存放路径,我的是<code>~/Download/esp32-idf3-20180511-v1.9.4.bin</code>。</p><p>记住以后就可以开始刷了,记住把我的串口号和固件路径换成你的，烧录的时候也要按一下boot键。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">(esp32)$</span><span class="bash"> esptool.py --port /dev/ttyUSB0 --baud 460800 write_flash --flash_size=detect 0 ～/Download/esp32-idf3-20180511-v1.9.4.bin</span></span><br><span class="line">esptool.py v2.8</span><br><span class="line">Serial port /dev/ttyUSB0</span><br><span class="line">Connecting........_____...</span><br><span class="line">Detecting chip type... ESP32</span><br><span class="line">Chip is ESP32D0WDQ6 (revision 1)</span><br><span class="line">Features: WiFi, BT, Dual Core, 240MHz, VRef calibration in efuse, Coding Scheme None</span><br><span class="line">Crystal is 40MHz</span><br><span class="line">MAC: 24:6f:28:b6:14:04</span><br><span class="line">Uploading stub...</span><br><span class="line">Running stub...</span><br><span class="line">Stub running...</span><br><span class="line">Changing baud rate to 460800</span><br><span class="line">Changed.</span><br><span class="line">Configuring flash size...</span><br><span class="line">Auto-detected Flash size: 4MB</span><br><span class="line">Compressed 982832 bytes to 609724...</span><br><span class="line">Wrote 982832 bytes (609724 compressed) at 0x00000000 in 13.9 seconds (effective 565.0 kbit/s)...</span><br><span class="line">Hash of data verified.</span><br><span class="line"></span><br><span class="line">Leaving...</span><br><span class="line">Hard resetting via RTS pin...</span><br></pre></td></tr></table></figure><p>要是输出和我一样证明你固件就刷进去了。</p><h3 id="串口交互"><a href="#串口交互" class="headerlink" title="串口交互"></a>串口交互</h3><p>我使用的是picocom，这玩意是真的小小到吓到我了，就0.05MiB。我当时看到都懵逼了。</p><p>废话不多说我们先开始下载，manjaro的话pacman一下就能下，其他平台我没搞所以动动小手去百度一下就行。安装完成的话我们就可以开始与板子连接交互了！</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">$</span><span class="bash"> picocom /dev/ttyUSB0 -b 115200</span></span><br><span class="line">picocom v3.1</span><br><span class="line"></span><br><span class="line">port is        : /dev/ttyUSB0</span><br><span class="line">flowcontrol    : none</span><br><span class="line">baudrate is    : 115200</span><br><span class="line">parity is      : none</span><br><span class="line">databits are   : 8</span><br><span class="line">stopbits are   : 1</span><br><span class="line">escape is      : C-a</span><br><span class="line">local echo is  : no</span><br><span class="line">noinit is      : no</span><br><span class="line">noreset is     : no</span><br><span class="line">hangup is      : no</span><br><span class="line">nolock is      : no</span><br><span class="line">send_cmd is    : sz -vv</span><br><span class="line">receive_cmd is : rz -vv -E</span><br><span class="line">imap is        : </span><br><span class="line">omap is        : </span><br><span class="line">emap is        : crcrlf,delbs,</span><br><span class="line">logfile is     : none</span><br><span class="line">initstring     : none</span><br><span class="line">exit_after is  : not set</span><br><span class="line">exit is        : no</span><br><span class="line"></span><br><span class="line">Type [C-a] [C-h] to see available commands</span><br><span class="line">Terminal ready</span><br></pre></td></tr></table></figure><p>这样输出说明恭喜你按一下Enter你就可以开始交互了！</p><p>你可以输入print(‘hello world’)来实验一下。</p><p>要是想退出的话你去按<code>Ctrl +C</code>的话木大木大木大，picocom退出要按<code>Ctrl+A</code>然后再按<code>Ctrl+Q</code>。</p><h3 id="问题记录"><a href="#问题记录" class="headerlink" title="问题记录"></a>问题记录</h3><ol><li>在刷入和清楚的时候记得在命令执行后按boot键（boot键是esp32的下载键）</li><li>按boot键的时机。经过我踩坑时的那么多次尝试，如果你执行命令之后不去按boot键会跑进度条，在进度条时按也是没事的，要是进度条跑慢就会报这样的错。（进度条就是Connecting那行）</li></ol><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">esptool.py v2.8</span><br><span class="line">Serial port /dev/ttyUSB0</span><br><span class="line">Connecting........_____....._____....._____....._____....._____....._____....._____</span><br><span class="line"></span><br><span class="line">A fatal error occurred: Failed to connect to Espressif device: Invalid head of packet (0x55)</span><br></pre></td></tr></table></figure><p>我感觉第二条是屁话hhh。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;开一个坑来记录一下我玩esp32的路。&lt;/p&gt;
+&lt;p&gt;我电脑的环境如下&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;系统：Manjrao19&lt;/p&gt;
+&lt;p&gt;Python版本：3.8.1&lt;/p&gt;
+&lt;p&gt;Shell：fish&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;这一篇来说一下刷固件什么的以及我踩的坑。&lt;/p&gt;
+&lt;p&gt;我基于MicroPython开发的，ArdoinoC要去学C短期玩玩开发板去重新学一门语言好累，加上C那玩意搞得我头皮发麻就没这个想法了，后来发现Python也可以写，那不何乐而不为？&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="http://charet.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="ESP32" scheme="http://charet.github.io/tags/ESP32/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>fish运行venv的坑</title>
+    <link href="http://charet.github.io/2020/03/05/fish%E8%BF%90%E8%A1%8Cvenv%E7%9A%84%E5%9D%91/"/>
+    <id>http://charet.github.io/2020/03/05/fish%E8%BF%90%E8%A1%8Cvenv%E7%9A%84%E5%9D%91/</id>
+    <published>2020-03-05T00:43:22.000Z</published>
+    <updated>2020-03-05T04:15:06.665Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天本来打算开始折腾ESP32结果我的esptool和我其他的python包冲突。于是我就去用venv创了一个虚拟环境来搞ESP32。结果发现我特么启动不了环境。他启动环境的文件是<code>&lt;venv&gt;/bin/activate</code>，结果我的fish不兼容bash的语法就打不开这个bash的脚本，我换了一下bash的脚本果然跑起来了。But那个bash太捞了我看不上于是我就去网上搜，发现venv有fish版的脚本是bin目录下的<code>activate.fish</code>。我兴致勃勃的跑去跑结果我的shell给我又包了错。。。。</p><a id="more"></a><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;/&gt; ~/G/EPS32 ./esp32/bin/activate.fish   </span><br><span class="line">Failed to execute process './esp32/bin/activate.fish'. Reason:</span><br><span class="line">exec: Exec format error</span><br><span class="line">The file './esp32/bin/activate.fish' is marked as an executable but could not be run by the operating system.</span><br></pre></td></tr></table></figure><p>我一看，嗯？？？这不是和我运行bash的报错一样嘛？？？？这就非常迷惑了。我就继续去网上找资料，我发现py官网居然有venv的文档，nb！我在文档里看到一个教我启动脚本的，我输了一下那个命令wtf？跑起来了。非常迷惑，那命令和我的差不多。。。。就是多了一个空格，我也不知道是什么神仙操作。。。。</p><p>顺便官方的各个平台运行虚拟环境方法的表格为下：</p><table><thead><tr><th><strong>平台</strong></th><th><strong>Shell</strong></th><th><strong>用于激活虚拟环境的命令</strong></th></tr></thead><tbody><tr><td>POSIX</td><td>bash/zsh</td><td>$ source <venv>/bin/activate</td></tr><tr><td></td><td>fish</td><td>$ . <venv>/bin/activate.fish</td></tr><tr><td></td><td>csh/tcsh</td><td>$ source <venv>/bin/activate.csh</td></tr><tr><td></td><td>PowerShell Core</td><td>$ <venv>/bin/Activate.ps1</td></tr><tr><td>Windows</td><td>cmd.exe</td><td>C:&gt; <venv>\Scripts\activate.bat</td></tr><tr><td></td><td>PowerShell</td><td>PS C:&gt; <venv>\Scripts\Activate.ps1</td></tr></tbody></table><p>另外官方文档对venv的介绍写的不错，里面教程感觉不错就顺便也贴这了（<a href="https://docs.python.org/zh-cn/3/library/venv.html#module-venv">点我</a>）</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天本来打算开始折腾ESP32结果我的esptool和我其他的python包冲突。于是我就去用venv创了一个虚拟环境来搞ESP32。结果发现我特么启动不了环境。他启动环境的文件是&lt;code&gt;&amp;lt;venv&amp;gt;/bin/activate&lt;/code&gt;，结果我的fish不兼容bash的语法就打不开这个bash的脚本，我换了一下bash的脚本果然跑起来了。But那个bash太捞了我看不上于是我就去网上搜，发现venv有fish版的脚本是bin目录下的&lt;code&gt;activate.fish&lt;/code&gt;。我兴致勃勃的跑去跑结果我的shell给我又包了错。。。。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="踩坑" scheme="http://charet.github.io/categories/%E8%B8%A9%E5%9D%91/"/>
+    
+    
+      <category term="Python" scheme="http://charet.github.io/tags/Python/"/>
+    
+      <category term="Virtualenv" scheme="http://charet.github.io/tags/Virtualenv/"/>
+    
+      <category term="Fish" scheme="http://charet.github.io/tags/Fish/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>帐号一次性密码</title>
+    <link href="http://charet.github.io/2020/03/01/%E5%B8%90%E5%8F%B7%E4%B8%80%E6%AC%A1%E6%80%A7%E5%AF%86%E7%A0%81/"/>
+    <id>http://charet.github.io/2020/03/01/%E5%B8%90%E5%8F%B7%E4%B8%80%E6%AC%A1%E6%80%A7%E5%AF%86%E7%A0%81/</id>
+    <published>2020-03-01T13:07:40.000Z</published>
+    <updated>2020-03-01T13:24:05.035Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天突然来了脑洞，关于平时借号。有时候把QQ借给别人会暴露自己的所有密码（有些人所有平台的密码都是一模一样的）。还有人会乱翻我的收藏夹,不要瞎想没有奇怪东西。所以我就想了想有什么东西可以解决这个问题呢？后来想出了一次性密码这种操作。</p><a id="more"></a><p>关于一次性密码有以下几种功能，记录下来以供以后需要的时候能够用上：</p><ul><li><strong>一次性的密码要有时效性</strong>：比如用号主设置了1个小时那这个帐号也就只能使用一个小时，过时就自动退出并删除该密码。</li><li><strong>一次性密码使用权限</strong>:有些熊孩子把人家号一借到手就各种去窥探他人隐私，这种的话号主那他也没办法，于是就可以在密码生成的时候可以去指定可以使用的一些场景，比如只用与聊天的话就选择聊天权限其他的就不给予，类似与电脑系统的来宾账户？</li><li><strong>一次性密码使用时的轨迹</strong>：我觉得借号给别人最好去记录一下对方用了自己的帐号做了什么，我就见过以前计算机课有人下课后QQ没关，有人那他的号骂人。号主最好监视对方拿自己的帐号做了什么，如果是违法活动可以给自己留下清白的证据。</li></ul><p>自我感觉想法不错，不知道以后能不能用上，先记录下来再说。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天突然来了脑洞，关于平时借号。有时候把QQ借给别人会暴露自己的所有密码（有些人所有平台的密码都是一模一样的）。还有人会乱翻我的收藏夹,不要瞎想没有奇怪东西。所以我就想了想有什么东西可以解决这个问题呢？后来想出了一次性密码这种操作。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="灵感" scheme="http://charet.github.io/categories/%E7%81%B5%E6%84%9F/"/>
+    
+    
+      <category term="想法" scheme="http://charet.github.io/tags/%E6%83%B3%E6%B3%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>ESP32</title>
+    <link href="http://charet.github.io/2020/02/29/ESP32/"/>
+    <id>http://charet.github.io/2020/02/29/ESP32/</id>
+    <published>2020-02-29T12:53:20.000Z</published>
+    <updated>2020-03-05T03:13:40.569Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天喜闻乐见的找了一万年我这个ESP32的针脚图，找不到是最真实的，并夕夕的东西果然不敢恭维。</p><p>然后我把一些搜集的资料记录了一下。</p><p>这是开发板的MicroPython官方驱动下载链接：<a href="http://micropython.org/download#esp32">点我</a></p><a id="more"></a><h3 id="针脚图解"><a href="#针脚图解" class="headerlink" title="针脚图解"></a>针脚图解</h3><p>我的ESP32是ESP32Devkit v1,针脚图就丢下面了防止以后找不到～</p><p><img src="https://i.loli.net/2020/02/29/nvJfEAFxoYcSQ2y.png" alt="ESP32针脚"></p><h3 id="对一些针脚的注释"><a href="#对一些针脚的注释" class="headerlink" title="对一些针脚的注释"></a>对一些针脚的注释</h3><table><thead><tr><th>引脚</th><th>输入</th><th>输出</th><th>作用</th></tr></thead><tbody><tr><td>3V3</td><td>x</td><td>✓</td><td>3.3v output</td></tr><tr><td>GND</td><td>✓</td><td>x</td><td>-</td></tr><tr><td>GPIO0</td><td>pulled up</td><td>✓</td><td>outputs PWM signal at boot</td></tr><tr><td>GPIO1</td><td>TX pin</td><td>✓</td><td>debug output at boot</td></tr><tr><td>GPIO2</td><td>✓</td><td>✓</td><td>connected to on-board LED</td></tr><tr><td>GPIO3</td><td>✓</td><td>RX pin</td><td>HIGH at boot</td></tr><tr><td>GPIO4</td><td>✓</td><td>✓</td><td></td></tr><tr><td>GPIO5</td><td>✓</td><td>✓</td><td>outputs PWM signal at boot</td></tr><tr><td>GPIO6</td><td>x</td><td>x</td><td>connected to the integrated SPI flash</td></tr><tr><td>GPIO7</td><td>x</td><td>x</td><td>connected to the integrated SPI flash</td></tr><tr><td>GPIO8</td><td>x</td><td>x</td><td>connected to the integrated SPI flash</td></tr><tr><td>GPIO9</td><td>x</td><td>x</td><td>connected to the integrated SPI flash</td></tr><tr><td>GPIO10</td><td>x</td><td>x</td><td>connected to the integrated SPI flash</td></tr><tr><td>GPIO11</td><td>x</td><td>x</td><td>connected to the integrated SPI flash</td></tr><tr><td>GPIO12</td><td>✓</td><td>✓</td><td>boot fail if pulled high</td></tr><tr><td>GPIO13</td><td>✓</td><td>✓</td><td></td></tr><tr><td>GPIO14</td><td>✓</td><td>✓</td><td>outputs PWM signal at boot</td></tr><tr><td>GPIO15</td><td>✓</td><td>✓</td><td>outputs PWM signal at boot</td></tr><tr><td>GPIO16</td><td>✓</td><td>✓</td><td></td></tr><tr><td>GPIO17</td><td>✓</td><td>✓</td><td></td></tr><tr><td>GPIO18</td><td>✓</td><td>✓</td><td></td></tr><tr><td>GPIO19</td><td>✓</td><td>✓</td><td></td></tr><tr><td>GPIO21</td><td>✓</td><td>✓</td><td></td></tr><tr><td>GPIO22</td><td>✓</td><td>✓</td><td></td></tr><tr><td>GPIO23</td><td>✓</td><td>✓</td><td></td></tr><tr><td>GPIO24</td><td>✓</td><td>✓</td><td></td></tr><tr><td>GPIO25</td><td>✓</td><td>✓</td><td></td></tr><tr><td>GPIO26</td><td>✓</td><td>✓</td><td></td></tr><tr><td>GPIO27</td><td>✓</td><td>✓</td><td></td></tr><tr><td>GPIO32</td><td>✓</td><td>✓</td><td></td></tr><tr><td>GPIO33</td><td>✓</td><td>✓</td><td></td></tr><tr><td>GPIO34</td><td>✓</td><td></td><td>input only</td></tr><tr><td>GPIO35</td><td>✓</td><td></td><td>input only</td></tr><tr><td>GPIO36</td><td>✓</td><td></td><td>input only</td></tr><tr><td>GPIO39</td><td>✓</td><td></td><td>input only</td></tr></tbody></table><h3 id="按钮的作用"><a href="#按钮的作用" class="headerlink" title="按钮的作用"></a>按钮的作用</h3><ul><li>EN：复位按钮。</li><li>Boot：下载按钮。</li></ul><p>按下Boot键并保持，同时按一下EN键（此时不要松开Boot）进入”固件下载“模式，通过串口下载固件。</p><p>更详细的可以去看看<a href="https://docs.espressif.com/projects/esp-idf/zh_CN/latest/hw-reference/get-started-devkitc.html">官方文档</a>。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天喜闻乐见的找了一万年我这个ESP32的针脚图，找不到是最真实的，并夕夕的东西果然不敢恭维。&lt;/p&gt;
+&lt;p&gt;然后我把一些搜集的资料记录了一下。&lt;/p&gt;
+&lt;p&gt;这是开发板的MicroPython官方驱动下载链接：&lt;a href=&quot;http://micropython.org/download#esp32&quot;&gt;点我&lt;/a&gt;&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="http://charet.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="ESP32" scheme="http://charet.github.io/tags/ESP32/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>心态炸裂</title>
+    <link href="http://charet.github.io/2020/02/27/%E5%BF%83%E6%80%81%E7%82%B8%E8%A3%82/"/>
+    <id>http://charet.github.io/2020/02/27/%E5%BF%83%E6%80%81%E7%82%B8%E8%A3%82/</id>
+    <published>2020-02-27T14:26:10.000Z</published>
+    <updated>2020-03-23T15:04:20.994Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天在配置rust的环境又是掉坑里，烦躁！！！</p><p>我觉得要是谁推荐你去学计算机你可以锤死他了，本来好好的心情天天被他破坏掉真的烦人。</p><p>我想我以后要买一套耐砸的键盘和鼠标（暴躁程序员以上线）</p><a id="more"></a><p>顺便我的键盘和鼠标</p><p>HP -1</p><p>HP -1</p><p>HP -1</p><p>HP -1</p><p>HP -1</p><p>HP -1</p><p>HP -1</p><p>HP -1</p><p>HP -1</p><p>HP -1</p><p>HP -1</p><p>HP -1</p><p>HP -1</p><p>HP -1</p><p>HP -1</p><p>HP -1</p><p>我在重新安装rustup的过程中写了这个，不知道我什么时候可以搞的好，淦！！！</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天在配置rust的环境又是掉坑里，烦躁！！！&lt;/p&gt;
+&lt;p&gt;我觉得要是谁推荐你去学计算机你可以锤死他了，本来好好的心情天天被他破坏掉真的烦人。&lt;/p&gt;
+&lt;p&gt;我想我以后要买一套耐砸的键盘和鼠标（暴躁程序员以上线）&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="胡扯" scheme="http://charet.github.io/categories/%E8%83%A1%E6%89%AF/"/>
+    
+    
+      <category term="生活" scheme="http://charet.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>红蜻蜓</title>
+    <link href="http://charet.github.io/2020/02/25/%E7%BA%A2%E8%9C%BB%E8%9C%93/"/>
+    <id>http://charet.github.io/2020/02/25/%E7%BA%A2%E8%9C%BB%E8%9C%93/</id>
+    <published>2020-02-25T11:02:52.000Z</published>
+    <updated>2020-03-23T15:04:03.100Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天突然想起小学时学过一首霓虹国的歌，也是唯一一首，叫“红蜻蜓”。那时候不记得是二年级还是三年级，听外界各处说霓虹国当年怎么怎么犯下罪行，我当时就非常盲目的讨厌他，那一节课我就一点也没听，我记得老师当时还是叫霓虹语版的，非常高级。后来以为入宅的原因嘛，去了解了霓虹国的文化，有点喜欢，于是就有了今天的事。（当然霓虹政府依然该死，军国主义者biss。）我对这首歌的旋律一点也不记得，我记得老师当时说这是一首在绿本非常受人们喜爱的经典歌曲。我想自己听了那么多绿本流行歌，看看他们经典老歌怎么样，后来…..哎嘛真好听（<a href="http://music.163.com/#/m/song?id=2876139">想去听的话就点我</a>）。原版我也不知道是谁的，但今天听的这个纯音乐版感觉诶非常行！</p><p><del>所以我这编博客是用来安利歌的。</del>(误)</p><a id="more"></a><p>关于我入宅的经历非常憨批，我今天写作业时候想想就尴尬。当时为了和一个妹子（我们就叫她A）聊得来天然后就去找话题咯。她喜欢看番于是我就去了解了一下，当时和我玩的好的一个妹子（我们叫她B）也喜欢看番，我就叫B给我安利，谁知道这该死的动漫魅力如此之大，我就成二次元了。（呐呐呐呐呐）后来和A发生了一些尴尬的事情就不说了。(黑历史)我入宅的日期依稀记得是486锤白鲸前一个月。想想那时候好尴尬啊，各种发中二的话。But我估计米那桑入宅的时候都是这个样子的吧！de xio？</p><p>所以为什么我能从歌聊到这，我太会聊天了，不愧是我！聊天鬼才</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;今天突然想起小学时学过一首霓虹国的歌，也是唯一一首，叫“红蜻蜓”。那时候不记得是二年级还是三年级，听外界各处说霓虹国当年怎么怎么犯下罪行，我当时就非常盲目的讨厌他，那一节课我就一点也没听，我记得老师当时还是叫霓虹语版的，非常高级。后来以为入宅的原因嘛，去了解了霓虹国的文化，有点喜欢，于是就有了今天的事。（当然霓虹政府依然该死，军国主义者biss。）我对这首歌的旋律一点也不记得，我记得老师当时说这是一首在绿本非常受人们喜爱的经典歌曲。我想自己听了那么多绿本流行歌，看看他们经典老歌怎么样，后来…..哎嘛真好听（&lt;a href=&quot;http://music.163.com/#/m/song?id=2876139&quot;&gt;想去听的话就点我&lt;/a&gt;）。原版我也不知道是谁的，但今天听的这个纯音乐版感觉诶非常行！&lt;/p&gt;
+&lt;p&gt;&lt;del&gt;所以我这编博客是用来安利歌的。&lt;/del&gt;(误)&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="日常记录" scheme="http://charet.github.io/categories/%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/"/>
+    
+    
+      <category term="生活" scheme="http://charet.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Manjaro配置</title>
+    <link href="http://charet.github.io/2020/02/23/Manjaro%E9%85%8D%E7%BD%AE/"/>
+    <id>http://charet.github.io/2020/02/23/Manjaro%E9%85%8D%E7%BD%AE/</id>
+    <published>2020-02-23T09:39:30.000Z</published>
+    <updated>2020-02-29T12:36:05.748Z</updated>
+    
+    <content type="html"><![CDATA[<p>我电脑比较神奇，系统经常boom。重装之后我又不记得自己原来电脑上有啥，于是就有了这篇备忘录。</p><p>我的manjaro是gnome桌面的，我感觉开箱即用非常快乐就用这个桌面了。（但这几天我看见别人的KDE桌面好强，加个插件各种高级操作，i了i了）</p><a id="more"></a><h2 id="分区挂载"><a href="#分区挂载" class="headerlink" title="分区挂载"></a>分区挂载</h2><p>分区的话我在网上收集了一点资料，大概就这样分：</p><table><thead><tr><th>大小</th><th>挂载点</th><th>用途</th></tr></thead><tbody><tr><td>40G</td><td><code>/</code></td><td>用于存放系统相当于windows的C盘</td></tr><tr><td>8G</td><td><code>/swap</code></td><td>一般设为电脑内存的2倍</td></tr><tr><td>600MB</td><td><code>/boot</code></td><td>引导分区</td></tr><tr><td>剩余所有空间</td><td><code>/home</code></td><td>用户存储数据用</td></tr></tbody></table><p>（转载于此：<a href="https://michael728.github.io/2019/08/03/linux-manjaro-install/">点我</a>）</p><h2 id="换源"><a href="#换源" class="headerlink" title="换源"></a>换源</h2><p>然后就是换源非常，喜闻乐见的的几行代码，傻瓜式操作。</p><p>我感觉manjaro的比其他系统人性化很多！因为他有窗口！！</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman-mirrors -g</span><br><span class="line">sudo pacman-mirrors -c China -m rank</span><br><span class="line"><span class="meta">#</span><span class="bash"> 然后等一下就会弹出窗口，按速度自己选吧～</span></span><br><span class="line"></span><br><span class="line">nano /etc/pacman.conf</span><br><span class="line"><span class="meta">#</span><span class="bash"> 在文件内添加这三行</span></span><br><span class="line">[archlinuxcn]</span><br><span class="line">SigLevel = Optional TrustedOnly</span><br><span class="line">Server = https://mirrors.tuna.tsinghua.edu.cn/archlinuxcn/$arch</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash">再安装一下archlinuxcn-keyring</span></span><br><span class="line">sudo pacman -S archlinuxcn-keyring</span><br></pre></td></tr></table></figure><p>之后同步同步u1s1看心情，等有时间更新一样的:</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -Syyu</span><br></pre></td></tr></table></figure><h2 id="中文输入法"><a href="#中文输入法" class="headerlink" title="中文输入法"></a>中文输入法</h2><p>我用的是google拼音输入法。搜狗在manjaro上有bug，我懒得去搞，然而这个用来这么久除了没词库，其他我感觉还行。（词库貌似可以手动加，但是我懒）</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S fcitx-googlepinyin fcitx-im fcitx-configtool</span><br><span class="line"><span class="meta">#</span><span class="bash"> 安装好了添加一下配置文件，注销系统就可以用了。</span></span><br><span class="line">nano ~/.xprofile</span><br><span class="line"><span class="meta">#</span><span class="bash"> 添加以下内容</span></span><br><span class="line">export GTK_MODULE=fcitx</span><br><span class="line">export QT_IM_MODULE=fcitx</span><br><span class="line">export XMODIFIERS="@im=fcitx"</span><br></pre></td></tr></table></figure><h2 id="Fishell"><a href="#Fishell" class="headerlink" title="Fishell"></a>Fishell</h2><p>fish这个shell我挺喜欢的没有zsh那么重量，然后对我来说该有的功能都有。入了这玩意以后我就换不掉了。</p><p>安装非常简单就：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pacman -S fish</span><br></pre></td></tr></table></figure><p>fish要配合omf一起用比较好，安装也是一条命令的事，懒人福利，快乐！</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L github.com/oh-my-fish/oh-my-fish/raw/master/bin/install | fish</span><br></pre></td></tr></table></figure><p>我用的是默认的那个皮肤，挺好的。其他的插件可以自行了解一下。</p><h2 id="Clash（你猜这是啥）"><a href="#Clash（你猜这是啥）" class="headerlink" title="Clash（你猜这是啥）"></a>Clash（你猜这是啥）</h2><h4 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h4><p>安装还是一行命令的事：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yay -S clash</span><br></pre></td></tr></table></figure><p>（没有yay就自己改成pacman，下面也是一样的）</p><p>然后clash命令执行一下让他建立配置文件，</p><p>配置文件在<code>~/.config/clash/</code></p><p>之后把自己的配置文件复制进来就行。</p><hr><h4 id="开机自启"><a href="#开机自启" class="headerlink" title="开机自启"></a>开机自启</h4><p>下面是将clash设置为<strong>开机自启</strong>，我们使用的是systemd。</p><p>在<code>/lib/systemd/system/</code>目录下创建<code>clash@.service</code>文件</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo nano /lib/systemd/system/clash@.service</span><br></pre></td></tr></table></figure><p>写入一下内容（不用修改）并保存：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">[Unit]</span><br><span class="line">Description=A rule based proxy in Go for %i.</span><br><span class="line">After=network.target</span><br><span class="line"></span><br><span class="line">[Service]</span><br><span class="line">Type=simple</span><br><span class="line">User=%i</span><br><span class="line">Restart=on-abort</span><br><span class="line">ExecStart=/usr/bin/clash</span><br><span class="line"></span><br><span class="line">[Install]</span><br><span class="line">WantedBy=multi-user.target</span><br></pre></td></tr></table></figure><p>重新加载 <code>systemd</code> 模块</p><blockquote><p><code>user</code> 表示的是当前用户名</p></blockquote><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl start clash@user</span><br></pre></td></tr></table></figure><p>设置开机自启</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">systemctl enable clash@user</span><br></pre></td></tr></table></figure><p>(转载于此：<a href="https://github.com/Sitoi/SystemdClash">点我</a>)</p><h2 id="WPS"><a href="#WPS" class="headerlink" title="WPS"></a>WPS</h2><h4 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yay -S wps-office wps-office-mui-zh-cn</span><br></pre></td></tr></table></figure><p>这里会安装office三兄弟和中文包</p><h4 id="遇到的问题"><a href="#遇到的问题" class="headerlink" title="遇到的问题"></a>遇到的问题</h4><p>你一打开就给你弹一个报错窗口非常快乐，说缺少字体。But我们不用慌，像其他发行版我们还要自己找字体还要自己装，我们的manjaro就不一样了强大的AUR啥玩意都有，咱又就一个命令解决：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo yay -S ttf-wps-fonts</span><br></pre></td></tr></table></figure><p>装好以后，去写文档，喜闻乐见的问题又出现了，wtf我怎么用不了的中文输入法，还是别慌～</p><p>我们把这三个文件<code>/usr/bin/wps</code>、<code>/usr/bin/wpp</code>、<code>/usr/bin/et</code>的开头加上这几句话问题就迎刃而解。</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span><span class="bash">!/bin/bash</span></span><br><span class="line">export XMODIFIERS="@im=fcitx"</span><br><span class="line">export QT_IM_MODULE="fcitx"</span><br></pre></td></tr></table></figure><h2 id="Pip换源"><a href="#Pip换源" class="headerlink" title="Pip换源"></a>Pip换源</h2><p>在~/.pip/pip.conf中加入一下一句话，没有这个文件就自己创一个：</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[global]</span><br><span class="line">index-url = https://pypi.tuna.tsinghua.edu.cn/simple</span><br></pre></td></tr></table></figure><h2 id="npm换源"><a href="#npm换源" class="headerlink" title="npm换源"></a>npm换源</h2><p>一行命令非常快乐</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm config set registry https://registry.npm.taobao.org #淘宝的源</span><br><span class="line">npm config set registry https://registry.npmjs.org/ #官方的源</span><br><span class="line"><span class="meta">#</span><span class="bash">不想还源可以装一个cnpm，要用npm就把npm改为cnpm</span></span><br><span class="line">npm install -g cnpm --registry=https://registry.npm.taobao.org</span><br></pre></td></tr></table></figure><h2 id="我用的一些软件"><a href="#我用的一些软件" class="headerlink" title="我用的一些软件"></a>我用的一些软件</h2><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sudo yay -S albert #一个快速开软件的小工具</span><br><span class="line">sudo yay -S chrome #浏览器界的大哥大</span><br><span class="line">sudo yay -S netease-cloud-music #网易云</span><br><span class="line">sudo yay -S guake #一个用fps引擎写出来的一键呼出的终端</span><br><span class="line">sudo yay -S visual-studio-code-bin #vscode个人感觉无敌好用</span><br><span class="line">sudo yay -S nvim #一个轻量版的vim</span><br><span class="line">sudo yay -S typora #mkdown的编辑器</span><br><span class="line">sudo yay -S ranger #终端里的资源管理器</span><br></pre></td></tr></table></figure><p>OK,目前我就用了这些东西，还有一些小东西就懒得写了23333,后续还有啥我就后来加吧。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;我电脑比较神奇，系统经常boom。重装之后我又不记得自己原来电脑上有啥，于是就有了这篇备忘录。&lt;/p&gt;
+&lt;p&gt;我的manjaro是gnome桌面的，我感觉开箱即用非常快乐就用这个桌面了。（但这几天我看见别人的KDE桌面好强，加个插件各种高级操作，i了i了）&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="http://charet.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="Linux" scheme="http://charet.github.io/tags/Linux/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>我要打110了!</title>
+    <link href="http://charet.github.io/2020/02/23/%E6%88%91%E8%A6%81%E6%89%93110%E4%BA%86/"/>
+    <id>http://charet.github.io/2020/02/23/%E6%88%91%E8%A6%81%E6%89%93110%E4%BA%86/</id>
+    <published>2020-02-22T17:18:31.000Z</published>
+    <updated>2020-03-23T15:04:58.299Z</updated>
+    
+    <content type="html"><![CDATA[<p>非常真实，我有一种可以招Bug的体质，不管搞啥都要掉坑里，碰到各种奇奇怪怪的Bug。今天配置这个Hexo从晚上七点搞到现在。哇第一次上传就非常迷了，界面的排列就完全乱了，貌似是我hexo在clone的时候丢失了什么文件。然后我就把所有文件删掉了，非常真实的事情又发生。第二次跑起来的时候，网站就直接是白的，我佛了。后来就又删了一次重装就好了，非常迷，就不知道是怎么搞的，还好最后还是搭成了。</p><p>这个招Bug的体质真的是觉了，直接打110报警了。要是用天气之子里的话来说我就是“百分百的Bug男孩”2333333。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;非常真实，我有一种可以招Bug的体质，不管搞啥都要掉坑里，碰到各种奇奇怪怪的Bug。今天配置这个Hexo从晚上七点搞到现在。哇第一次上传就非常迷了，界面的排列就完全乱了，貌似是我hexo在clone的时候丢失了什么文件。然后我就把所有文件删掉了，非常真实的事情又发生。第二次
+      
+    
+    </summary>
+    
+    
+      <category term="日常记录" scheme="http://charet.github.io/categories/%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/"/>
+    
+    
+      <category term="生活" scheme="http://charet.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+</feed>
