@@ -6,7 +6,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="http://charet.github.io/"/>
-  <updated>2020-05-24T15:17:28.224Z</updated>
+  <updated>2020-05-25T14:55:32.881Z</updated>
   <id>http://charet.github.io/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Word入门(一)</title>
+    <link href="http://charet.github.io/2020/05/25/WORD%E5%85%A5%E9%97%A8-%E4%B8%80/"/>
+    <id>http://charet.github.io/2020/05/25/WORD%E5%85%A5%E9%97%A8-%E4%B8%80/</id>
+    <published>2020-05-25T13:50:04.000Z</published>
+    <updated>2020-05-25T14:55:32.881Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="序言"><a href="#序言" class="headerlink" title="序言"></a>序言</h1><p>这是我计算机课的学习笔记，学的东西不深，但是基本操作还是绰绰有余。若要学习高级操作可以去百度去另寻其他教程。</p><p>目前我学了Word和一点点Excel，软件版本是2010，教材是《计算机应用基础》。等把Word写完我就继续更新Excel的。</p><p>目前由于时间关系没有加入图片注释以及一些名词的解释，后期会补上的，请见谅。</p><a id="more"></a><h1 id="第一课Word入门"><a href="#第一课Word入门" class="headerlink" title="第一课Word入门"></a>第一课Word入门</h1><h3 id="知识点一：启动word"><a href="#知识点一：启动word" class="headerlink" title="知识点一：启动word"></a>知识点一：启动word</h3><ul><li>点击“开始”按钮，选择“所有程序”-&gt;“Microsoft Office”-&gt;“Microsoft Word2010”；</li><li>双击桌面Word图标；</li><li>双击一个Word文档，启动Word并打开文档。</li></ul><h3 id="知识点二：认识Word窗口界面元素"><a href="#知识点二：认识Word窗口界面元素" class="headerlink" title="知识点二：认识Word窗口界面元素"></a>知识点二：认识Word窗口界面元素</h3><h4 id="1-快速访问工具栏"><a href="#1-快速访问工具栏" class="headerlink" title="1.快速访问工具栏"></a>1.快速访问工具栏</h4><p>放置用户经常使用的命令按钮，可通过“自定义快捷访问工具栏”按钮添加或删除用户常用命令。</p><h4 id="2-标题栏"><a href="#2-标题栏" class="headerlink" title="2.标题栏"></a>2.标题栏</h4><ul><li>显示正在编辑的文档的名称</li><li>控制窗口最小化、最大化、还原及关闭</li></ul><h4 id="3-“文件”选项卡"><a href="#3-“文件”选项卡" class="headerlink" title="3.“文件”选项卡"></a>3.“文件”选项卡</h4><p>单击“文件”选项卡可查看BackStage视图，可以管理文档和有关文档的相关数据</p><ul><li>信息栏：保护文档</li><li>选项栏：打开“Word选项”对话框</li></ul><h4 id="4-功能区（选项卡）"><a href="#4-功能区（选项卡）" class="headerlink" title="4.功能区（选项卡）"></a>4.功能区（选项卡）</h4><p>功能区分为若干命令组，组中包换有命令按钮。</p><ol><li><p>“开始”功能区</p><ul><li>剪切板组</li><li>字体</li><li>段落</li><li>样式</li><li>编辑</li></ul></li><li><p>“插入”功能区</p><ul><li>页</li><li>表</li><li>插图</li><li>链接</li><li>页眉和页脚</li><li>文本</li><li>符号</li></ul></li><li><p>“页面布局”功能区</p><ul><li>主题</li><li>页面设置</li><li>页面背景</li><li>段落</li><li>排列</li></ul></li><li><p>“引用”功能区</p></li><li><p>“邮件”功能区</p><ul><li>校对</li><li>比较</li></ul></li><li><p>“审阅”功能区</p></li><li><p>“视图”功能区</p></li></ol><h4 id="5-工作区（编辑区）"><a href="#5-工作区（编辑区）" class="headerlink" title="5.工作区（编辑区）"></a>5.工作区（编辑区）</h4><p>编辑区是用户录入文字，进行编辑排版等各种文字处理工作的区域。</p><ul><li>在工作区闪烁的光标叫插入点，用于指示当前输入字符插入的位置。</li><li>工作区大小调整：<ul><li>单击“功能区最小化”按钮，仅显示功能区上的选项卡名称。</li><li>右击功能区内空白处，在弹出的快捷菜单中选择“功能区最小化命令”</li><li>功能区隐藏后，单击选项卡，即可展开相应的功能区</li><li>点击“展开功能区”按钮，可显示功能区。</li></ul></li></ul><h4 id="6-状态栏"><a href="#6-状态栏" class="headerlink" title="6.状态栏"></a>6.状态栏</h4><p>显示文档当前页码/总页码数、字数、当前所用的语言、当前编辑状态（插入、改写）等信息。</p><h4 id="7-视图切换按钮"><a href="#7-视图切换按钮" class="headerlink" title="7.视图切换按钮"></a>7.视图切换按钮</h4><p>页面视图（默认）</p><p>阅读版视图</p><p>Web版视图</p><p>大纲视图</p><p>草稿</p><h4 id="8-显示比例（10-500-）"><a href="#8-显示比例（10-500-）" class="headerlink" title="8.显示比例（10%-500%）"></a>8.显示比例（10%-500%）</h4><h3 id="知识点三：新建文档"><a href="#知识点三：新建文档" class="headerlink" title="知识点三：新建文档"></a>知识点三：新建文档</h3><ul><li>方法一：启动Word自动新建名为“文档1.docx”的文档；</li><li>方法二：单击快速访问工具栏上的”新建“按钮；</li><li>方法三：在”文件“选项卡中单击新建命令，在”可用模板“中选中一种模板，再单击”创建“按钮。</li></ul><h3 id="知识点四：输入文字"><a href="#知识点四：输入文字" class="headerlink" title="知识点四：输入文字"></a>知识点四：输入文字</h3><h4 id="选择输入法"><a href="#选择输入法" class="headerlink" title="选择输入法"></a>选择输入法</h4><ul><li>单击语言栏中输入法图标，打开输入法菜单。</li><li>快捷键：<ul><li>中英文切换：Ctrl+Space</li><li>不同输入法之间切换：Ctrl+Shift</li><li>全/半角切换：Shift+Space</li><li>中英文标点：Ctrl+.</li></ul></li></ul><h4 id="插入点"><a href="#插入点" class="headerlink" title="插入点"></a>插入点</h4><p>文字从插入点开始，每次输入到行末时word会自动换行。</p><p>注：排版时不用空格调整字间距，不用Enter调整行间距。</p><p>换行等快捷键：</p><ul><li>换行分段（Enter）：在段落末尾插入一个段落标记；</li><li>换行部分段（Shift+Enter）：插入自动换行符；</li><li>强制分页（Ctrl+Enter）：插入分页符；</li></ul><h4 id="改变插入点快捷键"><a href="#改变插入点快捷键" class="headerlink" title="改变插入点快捷键"></a>改变插入点快捷键</h4><ul><li>↑、↓：使光标上移或下移；</li><li>←、→：向左或向右移动一个字符；</li><li>Home/End：光标移动至行首/尾；</li><li>PageUP/PageDown：光标向上/下移动一屏；</li><li>Ctrl+↑/↓：向上或向下移动一段；</li><li>Ctrl+←/→：向左或向右移动一个单词；</li><li>Ctrl+Home/End：光标移动至文章开头/结尾；</li><li>Ctrl+PageUP/PageDown：向上/向下移动至页的顶行/底行。</li></ul><h4 id="输入特殊符号（实例）"><a href="#输入特殊符号（实例）" class="headerlink" title="输入特殊符号（实例）"></a>输入特殊符号（实例）</h4><ol><li>将光标定位于插入符号的位置；</li><li>在”插入“选项卡”符号“组中，单击”符号“按钮，在弹出的下拉菜单中选择”其他符号“命令，打开”符号“对话框；</li><li>选取符号后，单击”插入“按钮。</li></ol><h4 id="保存文档"><a href="#保存文档" class="headerlink" title="保存文档"></a>保存文档</h4><ul><li>方法一：在”文件”选项卡单击“另存为”命令，打开“另存为”对话框；选择保存路径，输入文件名，选择保存类型，单击“确定”按钮。</li><li>方法二：在“文件”选项卡中单击“保存”命令。</li><li>方法三：快捷键Ctrl+S。</li><li>方法四：单击“快速访问工具栏”中“保存”按钮。</li></ul><h4 id="Word文档的常用保存类型"><a href="#Word文档的常用保存类型" class="headerlink" title="Word文档的常用保存类型"></a>Word文档的常用保存类型</h4><ul><li>docx：word文档（Word97-2003为doc）</li><li>htm/html：网页文档，用于网页制作，可用浏览器打开</li><li>doct：word模板文档，用于制作同类模板的文档</li><li>txt：纯文本</li><li>rtf：跨平台文档</li><li>PDF（Portable Document Format）：便携式文档格式</li><li>XML（Extensible Markup Language）：可扩展标记语言</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      &lt;h1 id=&quot;序言&quot;&gt;&lt;a href=&quot;#序言&quot; class=&quot;headerlink&quot; title=&quot;序言&quot;&gt;&lt;/a&gt;序言&lt;/h1&gt;&lt;p&gt;这是我计算机课的学习笔记，学的东西不深，但是基本操作还是绰绰有余。若要学习高级操作可以去百度去另寻其他教程。&lt;/p&gt;
+&lt;p&gt;目前我学了Word和一点点Excel，软件版本是2010，教材是《计算机应用基础》。等把Word写完我就继续更新Excel的。&lt;/p&gt;
+&lt;p&gt;目前由于时间关系没有加入图片注释以及一些名词的解释，后期会补上的，请见谅。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="http://charet.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="office2010 word" scheme="http://charet.github.io/tags/office2010-word/"/>
+    
+  </entry>
   
   <entry>
     <title>今天搞点正能量</title>
