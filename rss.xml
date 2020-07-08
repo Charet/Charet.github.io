@@ -6,7 +6,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="http://charet.github.io/"/>
-  <updated>2020-05-25T14:55:32.881Z</updated>
+  <updated>2020-07-08T16:18:39.785Z</updated>
   <id>http://charet.github.io/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>诈个尸</title>
+    <link href="http://charet.github.io/2020/07/09/%E8%AF%88%E4%B8%AA%E5%B0%B8/"/>
+    <id>http://charet.github.io/2020/07/09/%E8%AF%88%E4%B8%AA%E5%B0%B8/</id>
+    <published>2020-07-08T16:08:11.000Z</published>
+    <updated>2020-07-08T16:18:39.785Z</updated>
+    
+    <content type="html"><![CDATA[<p>今天晚上打算用电脑clone一下L-ink的项目，去康康图纸什么的（假马可以看得懂）。于是我发现我电脑的某些奇奇怪怪的bug又好了抱着一丝念想我去装了一下hexo，喵的跑起来了。lbwnb！于是就诈个尸~</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;今天晚上打算用电脑clone一下L-ink的项目，去康康图纸什么的（假马可以看得懂）。于是我发现我电脑的某些奇奇怪怪的bug又好了抱着一丝念想我去装了一下hexo，喵的跑起来了。lbwnb！于是就诈个尸~&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="胡扯" scheme="http://charet.github.io/categories/%E8%83%A1%E6%89%AF/"/>
+    
+    
+      <category term="生活" scheme="http://charet.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
   
   <entry>
     <title>Word入门(一)</title>
