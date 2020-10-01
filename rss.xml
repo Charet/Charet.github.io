@@ -6,7 +6,7 @@
   <link href="/rss.xml" rel="self"/>
   
   <link href="http://charet.github.io/"/>
-  <updated>2020-07-08T16:18:39.785Z</updated>
+  <updated>2020-10-01T15:04:45.663Z</updated>
   <id>http://charet.github.io/</id>
   
   <author>
@@ -15,6 +15,58 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>她</title>
+    <link href="http://charet.github.io/2020/10/01/%E5%A5%B9/"/>
+    <id>http://charet.github.io/2020/10/01/%E5%A5%B9/</id>
+    <published>2020-10-01T14:51:57.000Z</published>
+    <updated>2020-10-01T15:04:45.663Z</updated>
+    
+    <content type="html"><![CDATA[<p>生而为人，我很抱歉。今天又是网易云的一天。要是她知道我喜欢她就好了，我也不至于这样。就这样把和以前一样忍住。她真傻。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;生而为人，我很抱歉。今天又是网易云的一天。要是她知道我喜欢她就好了，我也不至于这样。就这样把和以前一样忍住。她真傻。&lt;/p&gt;
+
+      
+    
+    </summary>
+    
+    
+      <category term="日常记录" scheme="http://charet.github.io/categories/%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95/"/>
+    
+    
+      <category term="生活" scheme="http://charet.github.io/tags/%E7%94%9F%E6%B4%BB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Arduino安装ESP8266兼容包</title>
+    <link href="http://charet.github.io/2020/07/15/Arduino%E5%AE%89%E8%A3%85ESP8266%E5%85%BC%E5%AE%B9%E5%8C%85/"/>
+    <id>http://charet.github.io/2020/07/15/Arduino%E5%AE%89%E8%A3%85ESP8266%E5%85%BC%E5%AE%B9%E5%8C%85/</id>
+    <published>2020-07-15T12:14:39.000Z</published>
+    <updated>2020-07-15T12:27:05.777Z</updated>
+    
+    <content type="html"><![CDATA[<p>别问我为什么前几篇还是eps32的笔记，后来就是esp8266的了。问就是找不到教程！</p><p>esp8266能用Arduino来开发我感觉挺好的。于是乎我去下了Arduino IDE，发现根本不兼容。</p><p>没办法就去找了教程，比较高级，于是日常记点没用的东西。</p><a id="more"></a><p>1、下载<a href="https://www.arduino.cc/en/Main/Software">Arduino IDE</a></p><p>2、打开Arduino，在“文件”菜单中单击“首选项”命令。在弹出的“首选项”对话框的“设置”选项卡中，将<a href="http://arduino.esp8266.com/stable/package_esp8266com_index.json添加到“附加开发板管理器网址”文本框。">http://arduino.esp8266.com/stable/package_esp8266com_index.json添加到“附加开发板管理器网址”文本框。</a></p><p>3、在“工具”菜单中选择“开发板“，在弹出的子菜单中选择”开发板管理器“。弹出”开发板管理器“对话框，在搜索栏中输入”8266“，安装第一个即可。</p><p>因为下载目标存放在外国服务器里，所以你懂的。</p>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;别问我为什么前几篇还是eps32的笔记，后来就是esp8266的了。问就是找不到教程！&lt;/p&gt;
+&lt;p&gt;esp8266能用Arduino来开发我感觉挺好的。于是乎我去下了Arduino IDE，发现根本不兼容。&lt;/p&gt;
+&lt;p&gt;没办法就去找了教程，比较高级，于是日常记点没用的东西。&lt;/p&gt;
+    
+    </summary>
+    
+    
+      <category term="技术" scheme="http://charet.github.io/categories/%E6%8A%80%E6%9C%AF/"/>
+    
+    
+      <category term="ESP8266" scheme="http://charet.github.io/tags/ESP8266/"/>
+    
+  </entry>
   
   <entry>
     <title>诈个尸</title>
